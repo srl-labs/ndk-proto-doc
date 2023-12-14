@@ -30,33 +30,18 @@
 		<div class="md:grid md:grid-cols-2 md:gap-20 md:items-center">
 			<div>
 				<p class="mb-4"><img src="/images/nokia_w.svg" width="100" alt="Logo" /></p>
-				<h3 class="text-3xl text-yellow-200 font-light mt-6">
-					SR Linux NDK Protobuf Documentation
-				</h3>
-				<p class="mt-4 text-white text-m max-w-[450px]">
-					User interface for SR Linux services
-					<sup>
-						<a
-							class="text-white-400 hover:text-blue-300"
-							href="https://learn.srlinux.dev/blog/2023/gnxi-browser-a-documentation-ui-for-openconfig-grpc-services/"
-						>
-							<svg
-								class="w-4 h-4 inline-flex"
-								aria-hidden="true"
-								xmlns="http://www.w3.org/2000/svg"
-								fill="none"
-								viewBox="0 0 20 20"
-							>
-								<path
-									stroke="currentColor"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M7.529 7.988a2.502 2.502 0 0 1 5 .191A2.441 2.441 0 0 1 10 10.582V12m-.01 3.008H10M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-								/>
-							</svg>
-						</a>
-					</sup>
+				<h3 class="text-3xl text-yellow-200 font-light mt-6">SR Linux NDK Service Documentation</h3>
+				<h4 class="text-xl text-white font-light">User interface for SR Linux NDK services.</h4>
+				<p class="text-white mt-4 max-w-[450px]">
+					SR Linux empowers users to enhance the system's capabilities by incorporating custom
+					applications that run seamlessly alongside native system applications.
+				</p>
+				<p class="text-white mt-4 max-w-[450px]">
+					<a
+						class="underline hover:text-yellow-200 text-blue-500"
+						href="https://learn.srlinux.dev/ndk/">SR Linux NDK (Network Development Kit)</a
+					> underpins this extensibility by providing a set of APIs and tools for developers to customize
+					the Network OS to their unique needs and requirements.
 				</p>
 			</div>
 			<div class="mt-5 bg-white rounded-lg shadow-xl">
