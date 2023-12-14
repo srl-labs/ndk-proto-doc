@@ -1,0 +1,616 @@
+{
+  "files": [
+    {
+      "name": "bfd_service.proto",
+      "description": "",
+      "package": "srlinux.sdk",
+      "hasEnums": true,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [
+        {
+          "name": "BfdmgrSessionSubType",
+          "longName": "BfdmgrGeneralSessionDataPb.BfdmgrSessionSubType",
+          "fullName": "srlinux.sdk.BfdmgrGeneralSessionDataPb.BfdmgrSessionSubType",
+          "description": "Represents BFD session subtype.",
+          "values": [
+            {
+              "name": "SESSION_SUB_TYPE_UNKNOWN",
+              "number": "0",
+              "description": "Session subtype unknown"
+            },
+            {
+              "name": "SESSION_SUB_TYPE_SINGLE_HOP",
+              "number": "1",
+              "description": "Single-hop session"
+            },
+            {
+              "name": "SESSION_SUB_TYPE_MULTI_HOP",
+              "number": "2",
+              "description": "Multi-hop session"
+            },
+            {
+              "name": "SESSION_SUB_TYPE_MICROBFD",
+              "number": "3",
+              "description": "microbfd session"
+            },
+            {
+              "name": "SESSION_SUB_TYPE_SBFD_ECHO",
+              "number": "4",
+              "description": "microbfd session"
+            }
+          ]
+        },
+        {
+          "name": "BfdmgrSessionStatus",
+          "longName": "BfdmgrSessionStatus",
+          "fullName": "srlinux.sdk.BfdmgrSessionStatus",
+          "description": "Represents BFD session status.",
+          "values": [
+            {
+              "name": "INVALID",
+              "number": "0",
+              "description": "Session invalid"
+            },
+            {
+              "name": "ADMIN_DOWN",
+              "number": "1",
+              "description": "Admin down"
+            },
+            {
+              "name": "DOWN",
+              "number": "2",
+              "description": "Status down"
+            },
+            {
+              "name": "INIT",
+              "number": "3",
+              "description": "Status initializing"
+            },
+            {
+              "name": "UP",
+              "number": "4",
+              "description": "Status up and running"
+            }
+          ]
+        },
+        {
+          "name": "BfdmgrSessionType",
+          "longName": "BfdmgrSessionType",
+          "fullName": "srlinux.sdk.BfdmgrSessionType",
+          "description": "Represents BFD session type.",
+          "values": [
+            {
+              "name": "SESSION_TYPE_UNKNOWN",
+              "number": "0",
+              "description": "Unknown session type"
+            },
+            {
+              "name": "SESSION_TYPE_P2P",
+              "number": "1",
+              "description": "Peer-to-peer session type"
+            },
+            {
+              "name": "SESSION_TYPE_MICROBFD",
+              "number": "2",
+              "description": "microbfd session type"
+            },
+            {
+              "name": "SESSION_TYPE_SBFD_ECHO",
+              "number": "3",
+              "description": "seamless BFD session type, echo initiator"
+            }
+          ]
+        }
+      ],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "BfdSessionNotification",
+          "longName": "BfdSessionNotification",
+          "fullName": "srlinux.sdk.BfdSessionNotification",
+          "description": "Represents BFD session notification.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "op",
+              "description": "Operation such as session create, delete, or update",
+              "label": "",
+              "type": "SdkMgrOperation",
+              "longType": "SdkMgrOperation",
+              "fullType": "srlinux.sdk.SdkMgrOperation",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "key",
+              "description": "Session key",
+              "label": "",
+              "type": "BfdmgrGeneralSessionKeyPb",
+              "longType": "BfdmgrGeneralSessionKeyPb",
+              "fullType": "srlinux.sdk.BfdmgrGeneralSessionKeyPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "data",
+              "description": "Session data",
+              "label": "",
+              "type": "BfdmgrGeneralSessionDataPb",
+              "longType": "BfdmgrGeneralSessionDataPb",
+              "fullType": "srlinux.sdk.BfdmgrGeneralSessionDataPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "BfdSessionSubscriptionRequest",
+          "longName": "BfdSessionSubscriptionRequest",
+          "fullName": "srlinux.sdk.BfdSessionSubscriptionRequest",
+          "description": "Represents BFD session subscription request.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "Optional, to filter on name",
+              "label": "",
+              "type": "BfdmgrGeneralSessionKeyPb",
+              "longType": "BfdmgrGeneralSessionKeyPb",
+              "fullType": "srlinux.sdk.BfdmgrGeneralSessionKeyPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "BfdmgrGeneralSessionDataPb",
+          "longName": "BfdmgrGeneralSessionDataPb",
+          "fullName": "srlinux.sdk.BfdmgrGeneralSessionDataPb",
+          "description": "Represents BFD session data.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "status",
+              "description": "Status of the session",
+              "label": "",
+              "type": "BfdmgrSessionStatus",
+              "longType": "BfdmgrSessionStatus",
+              "fullType": "srlinux.sdk.BfdmgrSessionStatus",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "sub_type",
+              "description": "Subtype of the session",
+              "label": "",
+              "type": "BfdmgrSessionSubType",
+              "longType": "BfdmgrGeneralSessionDataPb.BfdmgrSessionSubType",
+              "fullType": "srlinux.sdk.BfdmgrGeneralSessionDataPb.BfdmgrSessionSubType",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "src_if_id",
+              "description": "src_if_id is only populated for P2P type\n\nSource interface ID",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "BfdmgrGeneralSessionKeyPb",
+          "longName": "BfdmgrGeneralSessionKeyPb",
+          "fullName": "srlinux.sdk.BfdmgrGeneralSessionKeyPb",
+          "description": "Represents BFD session key.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "type",
+              "description": "type is always present, other key field presence is determined by type\n\nSession type",
+              "label": "",
+              "type": "BfdmgrSessionType",
+              "longType": "BfdmgrSessionType",
+              "fullType": "srlinux.sdk.BfdmgrSessionType",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "p2p",
+              "description": "",
+              "label": "",
+              "type": "P2pKey",
+              "longType": "BfdmgrGeneralSessionKeyPb.P2pKey",
+              "fullType": "srlinux.sdk.BfdmgrGeneralSessionKeyPb.P2pKey",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "Key",
+              "defaultValue": ""
+            },
+            {
+              "name": "microbfd",
+              "description": "",
+              "label": "",
+              "type": "MicrobfdKey",
+              "longType": "BfdmgrGeneralSessionKeyPb.MicrobfdKey",
+              "fullType": "srlinux.sdk.BfdmgrGeneralSessionKeyPb.MicrobfdKey",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "Key",
+              "defaultValue": ""
+            },
+            {
+              "name": "sbfdecho",
+              "description": "",
+              "label": "",
+              "type": "SbfdechoKey",
+              "longType": "BfdmgrGeneralSessionKeyPb.SbfdechoKey",
+              "fullType": "srlinux.sdk.BfdmgrGeneralSessionKeyPb.SbfdechoKey",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "Key",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "MicrobfdKey",
+          "longName": "BfdmgrGeneralSessionKeyPb.MicrobfdKey",
+          "fullName": "srlinux.sdk.BfdmgrGeneralSessionKeyPb.MicrobfdKey",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "interface_name",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "P2pKey",
+          "longName": "BfdmgrGeneralSessionKeyPb.P2pKey",
+          "fullName": "srlinux.sdk.BfdmgrGeneralSessionKeyPb.P2pKey",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "src_ip_addr",
+              "description": "Source IP address of the session",
+              "label": "",
+              "type": "IpAddressPb",
+              "longType": "IpAddressPb",
+              "fullType": "srlinux.sdk.IpAddressPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "dst_ip_addr",
+              "description": "Destination IP address of the session",
+              "label": "",
+              "type": "IpAddressPb",
+              "longType": "IpAddressPb",
+              "fullType": "srlinux.sdk.IpAddressPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "instance_id",
+              "description": "Network instance identifier",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "ipv6_ll_if_id",
+              "description": "Global if id for ipv6 link local session, otherwise 0",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "specified_discr",
+              "description": "True if discriminators are specified",
+              "label": "",
+              "type": "bool",
+              "longType": "bool",
+              "fullType": "bool",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "SbfdechoKey",
+          "longName": "BfdmgrGeneralSessionKeyPb.SbfdechoKey",
+          "fullName": "srlinux.sdk.BfdmgrGeneralSessionKeyPb.SbfdechoKey",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "instance_id",
+              "description": "Network instance identifier",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "sr_policy_segment_list_id",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "sr_policy_color",
+              "description": "",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "sr_policy_endpoint",
+              "description": "",
+              "label": "",
+              "type": "IpAddressPb",
+              "longType": "IpAddressPb",
+              "fullType": "srlinux.sdk.IpAddressPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    }
+  ],
+  "scalarValueTypes": [
+    {
+      "protoType": "double",
+      "notes": "",
+      "cppType": "double",
+      "csType": "double",
+      "goType": "float64",
+      "javaType": "double",
+      "phpType": "float",
+      "pythonType": "float",
+      "rubyType": "Float"
+    },
+    {
+      "protoType": "float",
+      "notes": "",
+      "cppType": "float",
+      "csType": "float",
+      "goType": "float32",
+      "javaType": "float",
+      "phpType": "float",
+      "pythonType": "float",
+      "rubyType": "Float"
+    },
+    {
+      "protoType": "int32",
+      "notes": "Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "int64",
+      "notes": "Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "uint32",
+      "notes": "Uses variable-length encoding.",
+      "cppType": "uint32",
+      "csType": "uint",
+      "goType": "uint32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int/long",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "uint64",
+      "notes": "Uses variable-length encoding.",
+      "cppType": "uint64",
+      "csType": "ulong",
+      "goType": "uint64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sint32",
+      "notes": "Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sint64",
+      "notes": "Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "fixed32",
+      "notes": "Always four bytes. More efficient than uint32 if values are often greater than 2^28.",
+      "cppType": "uint32",
+      "csType": "uint",
+      "goType": "uint32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "fixed64",
+      "notes": "Always eight bytes. More efficient than uint64 if values are often greater than 2^56.",
+      "cppType": "uint64",
+      "csType": "ulong",
+      "goType": "uint64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "sfixed32",
+      "notes": "Always four bytes.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sfixed64",
+      "notes": "Always eight bytes.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "bool",
+      "notes": "",
+      "cppType": "bool",
+      "csType": "bool",
+      "goType": "bool",
+      "javaType": "boolean",
+      "phpType": "boolean",
+      "pythonType": "boolean",
+      "rubyType": "TrueClass/FalseClass"
+    },
+    {
+      "protoType": "string",
+      "notes": "A string must always contain UTF-8 encoded or 7-bit ASCII text.",
+      "cppType": "string",
+      "csType": "string",
+      "goType": "string",
+      "javaType": "String",
+      "phpType": "string",
+      "pythonType": "str/unicode",
+      "rubyType": "String (UTF-8)"
+    },
+    {
+      "protoType": "bytes",
+      "notes": "May contain any arbitrary sequence of bytes.",
+      "cppType": "string",
+      "csType": "ByteString",
+      "goType": "[]byte",
+      "javaType": "ByteString",
+      "phpType": "string",
+      "pythonType": "str",
+      "rubyType": "String (ASCII-8BIT)"
+    }
+  ]
+}

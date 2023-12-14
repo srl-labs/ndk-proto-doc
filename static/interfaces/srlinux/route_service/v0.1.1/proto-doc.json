@@ -1,0 +1,590 @@
+{
+  "files": [
+    {
+      "name": "route_service.proto",
+      "description": "",
+      "package": "srlinux.sdk",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": true,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "IpRouteNotification",
+          "longName": "IpRouteNotification",
+          "fullName": "srlinux.sdk.IpRouteNotification",
+          "description": "Represents IP route notification.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "op",
+              "description": "Operation such as create, delete, or update",
+              "label": "",
+              "type": "SdkMgrOperation",
+              "longType": "SdkMgrOperation",
+              "fullType": "srlinux.sdk.SdkMgrOperation",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "key",
+              "description": "IP route key",
+              "label": "",
+              "type": "RouteKeyPb",
+              "longType": "RouteKeyPb",
+              "fullType": "srlinux.sdk.RouteKeyPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "data",
+              "description": "IP route data",
+              "label": "",
+              "type": "RoutePb",
+              "longType": "RoutePb",
+              "fullType": "srlinux.sdk.RoutePb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "IpRouteSubscriptionRequest",
+          "longName": "IpRouteSubscriptionRequest",
+          "fullName": "srlinux.sdk.IpRouteSubscriptionRequest",
+          "description": "Represents IP route subscription request.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "Optional, to filter on name",
+              "label": "",
+              "type": "RouteKeyPb",
+              "longType": "RouteKeyPb",
+              "fullType": "srlinux.sdk.RouteKeyPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "RouteAddRequest",
+          "longName": "RouteAddRequest",
+          "fullName": "srlinux.sdk.RouteAddRequest",
+          "description": "Represents route add request; can contain more than one route.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "routes",
+              "description": "IP routes",
+              "label": "repeated",
+              "type": "RouteInfo",
+              "longType": "RouteInfo",
+              "fullType": "srlinux.sdk.RouteInfo",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "RouteAddResponse",
+          "longName": "RouteAddResponse",
+          "fullName": "srlinux.sdk.RouteAddResponse",
+          "description": "Represents route add response.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "status",
+              "description": "Status of route add operation",
+              "label": "",
+              "type": "SdkMgrStatus",
+              "longType": "SdkMgrStatus",
+              "fullType": "srlinux.sdk.SdkMgrStatus",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "error_str",
+              "description": "Detailed error string",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "RouteDeleteRequest",
+          "longName": "RouteDeleteRequest",
+          "fullName": "srlinux.sdk.RouteDeleteRequest",
+          "description": "Represents route delete request; can contain more than one route.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "routes",
+              "description": "IP routes",
+              "label": "repeated",
+              "type": "RouteKeyPb",
+              "longType": "RouteKeyPb",
+              "fullType": "srlinux.sdk.RouteKeyPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "RouteDeleteResponse",
+          "longName": "RouteDeleteResponse",
+          "fullName": "srlinux.sdk.RouteDeleteResponse",
+          "description": "Represents route delete response.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "status",
+              "description": "Status of route delete operation",
+              "label": "",
+              "type": "SdkMgrStatus",
+              "longType": "SdkMgrStatus",
+              "fullType": "srlinux.sdk.SdkMgrStatus",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "error_str",
+              "description": "Detailed error string",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "RouteInfo",
+          "longName": "RouteInfo",
+          "fullName": "srlinux.sdk.RouteInfo",
+          "description": "Represents route information.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "Route key",
+              "label": "",
+              "type": "RouteKeyPb",
+              "longType": "RouteKeyPb",
+              "fullType": "srlinux.sdk.RouteKeyPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "data",
+              "description": "Route data",
+              "label": "",
+              "type": "RoutePb",
+              "longType": "RoutePb",
+              "fullType": "srlinux.sdk.RoutePb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "RouteKeyPb",
+          "longName": "RouteKeyPb",
+          "fullName": "srlinux.sdk.RouteKeyPb",
+          "description": "Represents route key.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "net_inst_name",
+              "description": "Network instance name",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "ip_prefix",
+              "description": "IP prefix",
+              "label": "",
+              "type": "IpAddrPrefLenPb",
+              "longType": "IpAddrPrefLenPb",
+              "fullType": "srlinux.sdk.IpAddrPrefLenPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "RoutePb",
+          "longName": "RoutePb",
+          "fullName": "srlinux.sdk.RoutePb",
+          "description": "Represents route data.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "nexthop_group_name",
+              "description": "Next hop group name",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "preference",
+              "description": "Preference",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "metric",
+              "description": "Metric",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "nexthop",
+              "description": "List of next hops",
+              "label": "repeated",
+              "type": "NextHop",
+              "longType": "NextHop",
+              "fullType": "srlinux.sdk.NextHop",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "owner_id",
+              "description": "Next hop owner identifier returned only on notification.",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "nhg_id",
+              "description": "Next-hop group identifier returned only on notification.",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "name": "SdkMgrRouteService",
+          "longName": "SdkMgrRouteService",
+          "fullName": "srlinux.sdk.SdkMgrRouteService",
+          "description": "Represents service for IP route operations.",
+          "methods": [
+            {
+              "name": "RouteAddOrUpdate",
+              "description": "Add or update IP routes.",
+              "requestType": "RouteAddRequest",
+              "requestLongType": "RouteAddRequest",
+              "requestFullType": "srlinux.sdk.RouteAddRequest",
+              "requestStreaming": false,
+              "responseType": "RouteAddResponse",
+              "responseLongType": "RouteAddResponse",
+              "responseFullType": "srlinux.sdk.RouteAddResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "RouteDelete",
+              "description": "Delete IP routes.",
+              "requestType": "RouteDeleteRequest",
+              "requestLongType": "RouteDeleteRequest",
+              "requestFullType": "srlinux.sdk.RouteDeleteRequest",
+              "requestStreaming": false,
+              "responseType": "RouteDeleteResponse",
+              "responseLongType": "RouteDeleteResponse",
+              "responseFullType": "srlinux.sdk.RouteDeleteResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "SyncStart",
+              "description": "Synchronization start for IP routes",
+              "requestType": "SyncRequest",
+              "requestLongType": "SyncRequest",
+              "requestFullType": "srlinux.sdk.SyncRequest",
+              "requestStreaming": false,
+              "responseType": "SyncResponse",
+              "responseLongType": "SyncResponse",
+              "responseFullType": "srlinux.sdk.SyncResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "SyncEnd",
+              "description": "Synchronization end for IP routes",
+              "requestType": "SyncRequest",
+              "requestLongType": "SyncRequest",
+              "requestFullType": "srlinux.sdk.SyncRequest",
+              "requestStreaming": false,
+              "responseType": "SyncResponse",
+              "responseLongType": "SyncResponse",
+              "responseFullType": "srlinux.sdk.SyncResponse",
+              "responseStreaming": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scalarValueTypes": [
+    {
+      "protoType": "double",
+      "notes": "",
+      "cppType": "double",
+      "csType": "double",
+      "goType": "float64",
+      "javaType": "double",
+      "phpType": "float",
+      "pythonType": "float",
+      "rubyType": "Float"
+    },
+    {
+      "protoType": "float",
+      "notes": "",
+      "cppType": "float",
+      "csType": "float",
+      "goType": "float32",
+      "javaType": "float",
+      "phpType": "float",
+      "pythonType": "float",
+      "rubyType": "Float"
+    },
+    {
+      "protoType": "int32",
+      "notes": "Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "int64",
+      "notes": "Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "uint32",
+      "notes": "Uses variable-length encoding.",
+      "cppType": "uint32",
+      "csType": "uint",
+      "goType": "uint32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int/long",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "uint64",
+      "notes": "Uses variable-length encoding.",
+      "cppType": "uint64",
+      "csType": "ulong",
+      "goType": "uint64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sint32",
+      "notes": "Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sint64",
+      "notes": "Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "fixed32",
+      "notes": "Always four bytes. More efficient than uint32 if values are often greater than 2^28.",
+      "cppType": "uint32",
+      "csType": "uint",
+      "goType": "uint32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "fixed64",
+      "notes": "Always eight bytes. More efficient than uint64 if values are often greater than 2^56.",
+      "cppType": "uint64",
+      "csType": "ulong",
+      "goType": "uint64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "sfixed32",
+      "notes": "Always four bytes.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sfixed64",
+      "notes": "Always eight bytes.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "bool",
+      "notes": "",
+      "cppType": "bool",
+      "csType": "bool",
+      "goType": "bool",
+      "javaType": "boolean",
+      "phpType": "boolean",
+      "pythonType": "boolean",
+      "rubyType": "TrueClass/FalseClass"
+    },
+    {
+      "protoType": "string",
+      "notes": "A string must always contain UTF-8 encoded or 7-bit ASCII text.",
+      "cppType": "string",
+      "csType": "string",
+      "goType": "string",
+      "javaType": "String",
+      "phpType": "string",
+      "pythonType": "str/unicode",
+      "rubyType": "String (UTF-8)"
+    },
+    {
+      "protoType": "bytes",
+      "notes": "May contain any arbitrary sequence of bytes.",
+      "cppType": "string",
+      "csType": "ByteString",
+      "goType": "[]byte",
+      "javaType": "ByteString",
+      "phpType": "string",
+      "pythonType": "str",
+      "rubyType": "String (ASCII-8BIT)"
+    }
+  ]
+}

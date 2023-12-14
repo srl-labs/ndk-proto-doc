@@ -1,0 +1,950 @@
+{
+  "files": [
+    {
+      "name": "sdk_service.proto",
+      "description": "Network programming APIs and messages. This is the base layer for agent registration, router event notifications such as interface, LLDP, BFD, and so on; also provides keepalive functionality to detect agent liveliness",
+      "package": "srlinux.sdk",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": true,
+      "enums": [
+        {
+          "name": "Operation",
+          "longName": "NotificationRegisterRequest.Operation",
+          "fullName": "srlinux.sdk.NotificationRegisterRequest.Operation",
+          "description": "Represents notification stream subscription request operation.",
+          "values": [
+            {
+              "name": "Create",
+              "number": "0",
+              "description": "Create a subscription"
+            },
+            {
+              "name": "Delete",
+              "number": "1",
+              "description": "Delete all subscriptions"
+            },
+            {
+              "name": "AddSubscription",
+              "number": "2",
+              "description": "Add subscription to existing subscriptions"
+            },
+            {
+              "name": "DeleteSubscription",
+              "number": "3",
+              "description": "Delete one subscription from existing subscriptions"
+            }
+          ]
+        }
+      ],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "AgentRegistrationRequest",
+          "longName": "AgentRegistrationRequest",
+          "fullName": "srlinux.sdk.AgentRegistrationRequest",
+          "description": "Represents registration request message used in agent register and unregister.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "js_path",
+              "description": "Optional, JSON path formatted strings, which are used in telemetry. Format of js_path follows hierarchical YANG. for example:\n.interface{.name==*}.my_app.\n.my_app.tunnel{.name==*}\n'*'' needs to be replaced with a specific key.",
+              "label": "repeated",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "agent_liveliness",
+              "description": "Kill this agent unless a keepalive is received within this many seconds.  Value of 0\nmeans do not monitor this agent for liveliness.",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "AgentRegistrationResponse",
+          "longName": "AgentRegistrationResponse",
+          "fullName": "srlinux.sdk.AgentRegistrationResponse",
+          "description": "Represents registration response in reply to registration request.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "status",
+              "description": "Status of the register; for example: kOk, kFailed",
+              "label": "",
+              "type": "SdkMgrStatus",
+              "longType": "SdkMgrStatus",
+              "fullType": "srlinux.sdk.SdkMgrStatus",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "error_str",
+              "description": "Detailed error text",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "app_id",
+              "description": "Application ID assigned by SDK manager.",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "AppIdRequest",
+          "longName": "AppIdRequest",
+          "fullName": "srlinux.sdk.AppIdRequest",
+          "description": "Represents application identifier request from agent. All applications are assigned an identifier by IDB.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "name",
+              "description": "Application name",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "AppIdResponse",
+          "longName": "AppIdResponse",
+          "fullName": "srlinux.sdk.AppIdResponse",
+          "description": "Represents application identifier response to agent.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "status",
+              "description": "Status of the call; for example, kOk, kFailed",
+              "label": "",
+              "type": "SdkMgrStatus",
+              "longType": "SdkMgrStatus",
+              "fullType": "srlinux.sdk.SdkMgrStatus",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "id",
+              "description": "Identifier for the given application name",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "KeepAliveRequest",
+          "longName": "KeepAliveRequest",
+          "fullName": "srlinux.sdk.KeepAliveRequest",
+          "description": "Represents keep alive request from agent to refresh liveliness of the agent.",
+          "hasExtensions": false,
+          "hasFields": false,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "KeepAliveResponse",
+          "longName": "KeepAliveResponse",
+          "fullName": "srlinux.sdk.KeepAliveResponse",
+          "description": "Represents keepalive response.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "status",
+              "description": "Status of keepalive; for example, kOk or kFailed",
+              "label": "",
+              "type": "SdkMgrStatus",
+              "longType": "SdkMgrStatus",
+              "fullType": "srlinux.sdk.SdkMgrStatus",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "Notification",
+          "longName": "Notification",
+          "fullName": "srlinux.sdk.Notification",
+          "description": "Represents notification stream response.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "sub_id",
+              "description": "Subscription identifier",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "intf",
+              "description": "Interface details",
+              "label": "",
+              "type": "InterfaceNotification",
+              "longType": "InterfaceNotification",
+              "fullType": "srlinux.sdk.InterfaceNotification",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "subscription_types",
+              "defaultValue": ""
+            },
+            {
+              "name": "nw_inst",
+              "description": "Network instance details",
+              "label": "",
+              "type": "NetworkInstanceNotification",
+              "longType": "NetworkInstanceNotification",
+              "fullType": "srlinux.sdk.NetworkInstanceNotification",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "subscription_types",
+              "defaultValue": ""
+            },
+            {
+              "name": "lldp_neighbor",
+              "description": "LLDP neighbor details",
+              "label": "",
+              "type": "LldpNeighborNotification",
+              "longType": "LldpNeighborNotification",
+              "fullType": "srlinux.sdk.LldpNeighborNotification",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "subscription_types",
+              "defaultValue": ""
+            },
+            {
+              "name": "config",
+              "description": "Configuration notification",
+              "label": "",
+              "type": "ConfigNotification",
+              "longType": "ConfigNotification",
+              "fullType": "srlinux.sdk.ConfigNotification",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "subscription_types",
+              "defaultValue": ""
+            },
+            {
+              "name": "bfd_session",
+              "description": "BFD session details",
+              "label": "",
+              "type": "BfdSessionNotification",
+              "longType": "BfdSessionNotification",
+              "fullType": "srlinux.sdk.BfdSessionNotification",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "subscription_types",
+              "defaultValue": ""
+            },
+            {
+              "name": "route",
+              "description": "IP route details",
+              "label": "",
+              "type": "IpRouteNotification",
+              "longType": "IpRouteNotification",
+              "fullType": "srlinux.sdk.IpRouteNotification",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "subscription_types",
+              "defaultValue": ""
+            },
+            {
+              "name": "appid",
+              "description": "App identification details",
+              "label": "",
+              "type": "AppIdentNotification",
+              "longType": "AppIdentNotification",
+              "fullType": "srlinux.sdk.AppIdentNotification",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "subscription_types",
+              "defaultValue": ""
+            },
+            {
+              "name": "nhg",
+              "description": "Next-hop group details",
+              "label": "",
+              "type": "NextHopGroupNotification",
+              "longType": "NextHopGroupNotification",
+              "fullType": "srlinux.sdk.NextHopGroupNotification",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "subscription_types",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NotificationQueryRequest",
+          "longName": "NotificationQueryRequest",
+          "fullName": "srlinux.sdk.NotificationQueryRequest",
+          "description": "Represents notification query to return specific subscription details.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "stream_id",
+              "description": "Stream identifier, in NotificationRegisterResponse",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NotificationQueryResponse",
+          "longName": "NotificationQueryResponse",
+          "fullName": "srlinux.sdk.NotificationQueryResponse",
+          "description": "Represents notification query response.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "subscriptions",
+              "description": "List of subscription details",
+              "label": "repeated",
+              "type": "NotificationQuerySubscription",
+              "longType": "NotificationQuerySubscription",
+              "fullType": "srlinux.sdk.NotificationQuerySubscription",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "status",
+              "description": "Status of the query",
+              "label": "",
+              "type": "SdkMgrStatus",
+              "longType": "SdkMgrStatus",
+              "fullType": "srlinux.sdk.SdkMgrStatus",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NotificationQuerySubscription",
+          "longName": "NotificationQuerySubscription",
+          "fullName": "srlinux.sdk.NotificationQuerySubscription",
+          "description": "Represents notification subscription.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "sub_id",
+              "description": "Subscription identifier",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "description",
+              "description": "Subscription description",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NotificationRegisterRequest",
+          "longName": "NotificationRegisterRequest",
+          "fullName": "srlinux.sdk.NotificationRegisterRequest",
+          "description": "Represents notification request from agent. Agent uses this message to subscribe to router events such as interface create, delete, or update, as well as LLDP neighbor create, delete, or update, and so on.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "stream_id",
+              "description": "Unset on create, set otherwise",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "op",
+              "description": "Specific operation in the notification register request",
+              "label": "",
+              "type": "Operation",
+              "longType": "NotificationRegisterRequest.Operation",
+              "fullType": "srlinux.sdk.NotificationRegisterRequest.Operation",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "sub_id",
+              "description": "Set for delete subscription, unset otherwise",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "intf",
+              "description": "Interface subscription request",
+              "label": "",
+              "type": "InterfaceSubscriptionRequest",
+              "longType": "InterfaceSubscriptionRequest",
+              "fullType": "srlinux.sdk.InterfaceSubscriptionRequest",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "subscription_types",
+              "defaultValue": ""
+            },
+            {
+              "name": "nw_inst",
+              "description": "Network instance subscription request",
+              "label": "",
+              "type": "NetworkInstanceSubscriptionRequest",
+              "longType": "NetworkInstanceSubscriptionRequest",
+              "fullType": "srlinux.sdk.NetworkInstanceSubscriptionRequest",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "subscription_types",
+              "defaultValue": ""
+            },
+            {
+              "name": "lldp_neighbor",
+              "description": "LLDP neighbor subscription request",
+              "label": "",
+              "type": "LldpNeighborSubscriptionRequest",
+              "longType": "LldpNeighborSubscriptionRequest",
+              "fullType": "srlinux.sdk.LldpNeighborSubscriptionRequest",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "subscription_types",
+              "defaultValue": ""
+            },
+            {
+              "name": "config",
+              "description": "Configuration subscription request",
+              "label": "",
+              "type": "ConfigSubscriptionRequest",
+              "longType": "ConfigSubscriptionRequest",
+              "fullType": "srlinux.sdk.ConfigSubscriptionRequest",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "subscription_types",
+              "defaultValue": ""
+            },
+            {
+              "name": "bfd_session",
+              "description": "BFD session subscription request",
+              "label": "",
+              "type": "BfdSessionSubscriptionRequest",
+              "longType": "BfdSessionSubscriptionRequest",
+              "fullType": "srlinux.sdk.BfdSessionSubscriptionRequest",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "subscription_types",
+              "defaultValue": ""
+            },
+            {
+              "name": "route",
+              "description": "IP route subscription request",
+              "label": "",
+              "type": "IpRouteSubscriptionRequest",
+              "longType": "IpRouteSubscriptionRequest",
+              "fullType": "srlinux.sdk.IpRouteSubscriptionRequest",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "subscription_types",
+              "defaultValue": ""
+            },
+            {
+              "name": "appid",
+              "description": "App identification subscription request",
+              "label": "",
+              "type": "AppIdentSubscriptionRequest",
+              "longType": "AppIdentSubscriptionRequest",
+              "fullType": "srlinux.sdk.AppIdentSubscriptionRequest",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "subscription_types",
+              "defaultValue": ""
+            },
+            {
+              "name": "nhg",
+              "description": "Nexthop Group subscription request",
+              "label": "",
+              "type": "NextHopGroupSubscriptionRequest",
+              "longType": "NextHopGroupSubscriptionRequest",
+              "fullType": "srlinux.sdk.NextHopGroupSubscriptionRequest",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "subscription_types",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NotificationRegisterResponse",
+          "longName": "NotificationRegisterResponse",
+          "fullName": "srlinux.sdk.NotificationRegisterResponse",
+          "description": "Represents notification response.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "stream_id",
+              "description": "Stream identifier. This needs to be passed to the SDK manager for further notification\nsubscription changes specific to the current subscription",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "sub_id",
+              "description": "Subscription identifier. Each subscription gets an identifier, which can be used to delete a subscription",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "status",
+              "description": "Status of subscription",
+              "label": "",
+              "type": "SdkMgrStatus",
+              "longType": "SdkMgrStatus",
+              "fullType": "srlinux.sdk.SdkMgrStatus",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NotificationStreamRequest",
+          "longName": "NotificationStreamRequest",
+          "fullName": "srlinux.sdk.NotificationStreamRequest",
+          "description": "Represents notification stream request.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "stream_id",
+              "description": "Stream identifier",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NotificationStreamResponse",
+          "longName": "NotificationStreamResponse",
+          "fullName": "srlinux.sdk.NotificationStreamResponse",
+          "description": "Represents notification stream response that contains one or more notification.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "notification",
+              "description": "Notification details",
+              "label": "repeated",
+              "type": "Notification",
+              "longType": "Notification",
+              "fullType": "srlinux.sdk.Notification",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "name": "SdkMgrService",
+          "longName": "SdkMgrService",
+          "fullName": "srlinux.sdk.SdkMgrService",
+          "description": "Represents base service that defines agent registration, unregistration, notification subscriptions, and keepalive messages.",
+          "methods": [
+            {
+              "name": "AgentRegister",
+              "description": "Register agent",
+              "requestType": "AgentRegistrationRequest",
+              "requestLongType": "AgentRegistrationRequest",
+              "requestFullType": "srlinux.sdk.AgentRegistrationRequest",
+              "requestStreaming": false,
+              "responseType": "AgentRegistrationResponse",
+              "responseLongType": "AgentRegistrationResponse",
+              "responseFullType": "srlinux.sdk.AgentRegistrationResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "AgentUnRegister",
+              "description": "Unregister agent",
+              "requestType": "AgentRegistrationRequest",
+              "requestLongType": "AgentRegistrationRequest",
+              "requestFullType": "srlinux.sdk.AgentRegistrationRequest",
+              "requestStreaming": false,
+              "responseType": "AgentRegistrationResponse",
+              "responseLongType": "AgentRegistrationResponse",
+              "responseFullType": "srlinux.sdk.AgentRegistrationResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "NotificationRegister",
+              "description": "Register for event notifications",
+              "requestType": "NotificationRegisterRequest",
+              "requestLongType": "NotificationRegisterRequest",
+              "requestFullType": "srlinux.sdk.NotificationRegisterRequest",
+              "requestStreaming": false,
+              "responseType": "NotificationRegisterResponse",
+              "responseLongType": "NotificationRegisterResponse",
+              "responseFullType": "srlinux.sdk.NotificationRegisterResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "NotificationQuery",
+              "description": "Returns current or specific notification subscription details",
+              "requestType": "NotificationQueryRequest",
+              "requestLongType": "NotificationQueryRequest",
+              "requestFullType": "srlinux.sdk.NotificationQueryRequest",
+              "requestStreaming": false,
+              "responseType": "NotificationQueryResponse",
+              "responseLongType": "NotificationQueryResponse",
+              "responseFullType": "srlinux.sdk.NotificationQueryResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "KeepAlive",
+              "description": "Send periodic keepalive message",
+              "requestType": "KeepAliveRequest",
+              "requestLongType": "KeepAliveRequest",
+              "requestFullType": "srlinux.sdk.KeepAliveRequest",
+              "requestStreaming": false,
+              "responseType": "KeepAliveResponse",
+              "responseLongType": "KeepAliveResponse",
+              "responseFullType": "srlinux.sdk.KeepAliveResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "GetAppId",
+              "description": "Get application name from application identifier",
+              "requestType": "AppIdRequest",
+              "requestLongType": "AppIdRequest",
+              "requestFullType": "srlinux.sdk.AppIdRequest",
+              "requestStreaming": false,
+              "responseType": "AppIdResponse",
+              "responseLongType": "AppIdResponse",
+              "responseFullType": "srlinux.sdk.AppIdResponse",
+              "responseStreaming": false
+            }
+          ]
+        },
+        {
+          "name": "SdkNotificationService",
+          "longName": "SdkNotificationService",
+          "fullName": "srlinux.sdk.SdkNotificationService",
+          "description": "Represents service for handling notifications.",
+          "methods": [
+            {
+              "name": "NotificationStream",
+              "description": "Send stream of event notifications based on the agent subscriptions",
+              "requestType": "NotificationStreamRequest",
+              "requestLongType": "NotificationStreamRequest",
+              "requestFullType": "srlinux.sdk.NotificationStreamRequest",
+              "requestStreaming": false,
+              "responseType": "NotificationStreamResponse",
+              "responseLongType": "NotificationStreamResponse",
+              "responseFullType": "srlinux.sdk.NotificationStreamResponse",
+              "responseStreaming": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scalarValueTypes": [
+    {
+      "protoType": "double",
+      "notes": "",
+      "cppType": "double",
+      "csType": "double",
+      "goType": "float64",
+      "javaType": "double",
+      "phpType": "float",
+      "pythonType": "float",
+      "rubyType": "Float"
+    },
+    {
+      "protoType": "float",
+      "notes": "",
+      "cppType": "float",
+      "csType": "float",
+      "goType": "float32",
+      "javaType": "float",
+      "phpType": "float",
+      "pythonType": "float",
+      "rubyType": "Float"
+    },
+    {
+      "protoType": "int32",
+      "notes": "Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "int64",
+      "notes": "Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "uint32",
+      "notes": "Uses variable-length encoding.",
+      "cppType": "uint32",
+      "csType": "uint",
+      "goType": "uint32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int/long",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "uint64",
+      "notes": "Uses variable-length encoding.",
+      "cppType": "uint64",
+      "csType": "ulong",
+      "goType": "uint64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sint32",
+      "notes": "Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sint64",
+      "notes": "Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "fixed32",
+      "notes": "Always four bytes. More efficient than uint32 if values are often greater than 2^28.",
+      "cppType": "uint32",
+      "csType": "uint",
+      "goType": "uint32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "fixed64",
+      "notes": "Always eight bytes. More efficient than uint64 if values are often greater than 2^56.",
+      "cppType": "uint64",
+      "csType": "ulong",
+      "goType": "uint64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "sfixed32",
+      "notes": "Always four bytes.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sfixed64",
+      "notes": "Always eight bytes.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "bool",
+      "notes": "",
+      "cppType": "bool",
+      "csType": "bool",
+      "goType": "bool",
+      "javaType": "boolean",
+      "phpType": "boolean",
+      "pythonType": "boolean",
+      "rubyType": "TrueClass/FalseClass"
+    },
+    {
+      "protoType": "string",
+      "notes": "A string must always contain UTF-8 encoded or 7-bit ASCII text.",
+      "cppType": "string",
+      "csType": "string",
+      "goType": "string",
+      "javaType": "String",
+      "phpType": "string",
+      "pythonType": "str/unicode",
+      "rubyType": "String (UTF-8)"
+    },
+    {
+      "protoType": "bytes",
+      "notes": "May contain any arbitrary sequence of bytes.",
+      "cppType": "string",
+      "csType": "ByteString",
+      "goType": "[]byte",
+      "javaType": "ByteString",
+      "phpType": "string",
+      "pythonType": "str",
+      "rubyType": "String (ASCII-8BIT)"
+    }
+  ]
+}
