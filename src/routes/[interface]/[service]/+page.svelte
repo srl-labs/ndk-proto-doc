@@ -14,7 +14,6 @@
 
 	const services = yaml.load(ndkLoad) as Services;
 
-	const p = data.interface;
 	const s = data.service;
 	const v = data.version;
 
