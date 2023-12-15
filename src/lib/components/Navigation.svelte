@@ -19,14 +19,8 @@
 		};
 
 		if (browser) {
-			if (
-				localStorage.theme === 'dark' ||
-				(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-			) {
-				darkMode = true;
-			} else {
-				darkMode = false;
-			}
+			darkMode =
+				localStorage.theme === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches;
 			themeIconSwitch();
 		}
 	});
