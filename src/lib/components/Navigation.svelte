@@ -124,7 +124,7 @@
 			</div>
 		</div>
 		<div class="hidden lg:flex items-center">
-			<p class="dark:text-gray-200">SR Linux NDK Protobuf Documentation</p>
+			<p class="dark:text-gray-200">SR Linux NDK Service Documentation</p>
 		</div>
 		<!-- navbar right item -->
 		<div class="flex items-center">
