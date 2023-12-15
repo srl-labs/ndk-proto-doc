@@ -36,18 +36,19 @@
 			<div>
 				<p class="mb-4"><img src="/images/nokia_w.svg" width="100" alt="Logo" /></p>
 				<h3 class="text-3xl text-yellow-200 font-light mt-6">SR Linux NDK Service Documentation</h3>
-				<h4 class="text-xl text-white font-light">User interface for SR Linux NDK services.</h4>
-				<p class="text-white mt-4 max-w-[450px]">
-					SR Linux empowers users to enhance the system's capabilities by incorporating custom
-					applications that run seamlessly alongside native system applications.
-				</p>
-				<p class="text-white mt-4 max-w-[450px]">
-					<a
-						class="underline hover:text-yellow-200 text-blue-500"
-						href="https://learn.srlinux.dev/ndk/">SR Linux NDK (Network Development Kit)</a
-					> underpins this extensibility by providing a set of APIs and tools for developers to customize
-					the Network OS to their unique needs and requirements.
-				</p>
+				<div class="text-white mt-4 max-w-[450px] text-sm">
+					<p>
+						SR Linux empowers users to enhance the system's capabilities by incorporating custom
+						applications that run seamlessly alongside native system applications.
+					</p>
+					<p class="mt-4">
+						<a
+							class="underline text-blue-500 hover:text-blue-400"
+							href="https://learn.srlinux.dev/ndk/">SR Linux NDK (Network Development Kit)</a
+						> underpins this extensibility by providing a set of APIs and tools for developers to customize
+						the Network OS to their unique needs and requirements.
+					</p>
+				</div>
 			</div>
 			<div class="mt-5 bg-white rounded-lg shadow-xl">
 				<div class="my-1.5 h-[305px] overflow-y-auto scroll-light">
