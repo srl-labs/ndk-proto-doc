@@ -121,7 +121,7 @@
 			<p class="dark:text-gray-200">SR Linux NDK Service Documentation</p>
 		</div>
 		<!-- navbar right item -->
-		<div class="flex items-center">
+		<div class="flex items-center mr-8">
 			<button class="inline-flex px-2" on:click={toggleNavInterfaces}>
 				<svg
 					class="w-5 h-5 dark:text-gray-200"
