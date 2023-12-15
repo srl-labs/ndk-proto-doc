@@ -3,6 +3,27 @@
   import Table from './Table.svelte';
   import Footer from '$lib/components/Footer.svelte';
 
+  const orgMod = files[0]; 
+  let longNames: string[] = [];
+  if(orgMod.hasServices || orgMod.hasMessages || orgMod.hasEnums || orgMod.hasExtensions) {
+    if(orgMod.hasServices) {
+      let tmp = orgMod.services.map((x: { longName: string }) => x.longName);
+      longNames = longNames.concat(tmp);
+    }
+    if(orgMod.hasMessages) {
+      let tmp = orgMod.messages.map((x: { longName: string }) => x.longName);
+      longNames = longNames.concat(tmp);
+    }
+    if(orgMod.hasEnums) {
+      let tmp = orgMod.enums.map((x: { longName: string }) => x.longName);
+      longNames = longNames.concat(tmp);
+    }
+    if(orgMod.hasExtensions) {
+      let tmp = orgMod.extensions.map((x: { longName: string }) => x.longName);
+      longNames = longNames.concat(tmp);
+    }
+  }
+
   const isImported = (i: number) => { 
     let validate = i === 0 ? false: true;
     return validate;
@@ -39,7 +60,7 @@
           <div class="my-1">
             <a class="text-black dark:text-white hover:underline font-nunito uppercase scroll-mt-[70px]" id="{hrefSection}" href="#{hrefSection}">{sectionName}</a>
           </div>
-          <Table entry={entry.services} sectionName={sectionName} imported={isImported(i)}/>
+          <Table entry={entry.services} sectionName={sectionName} imported={isImported(i)} longNames={longNames}/>
         </div>
       {/if}
       {#if entry.hasMessages}
@@ -49,7 +70,7 @@
           <div class="my-1">
             <a class="text-black dark:text-white hover:underline font-nunito uppercase scroll-mt-[70px]" id="{hrefSection}" href="#{hrefSection}">{sectionName}</a>
           </div>
-          <Table entry={entry.messages} sectionName={sectionName} imported={isImported(i)}/>
+          <Table entry={entry.messages} sectionName={sectionName} imported={isImported(i)} longNames={longNames}/>
         </div>
       {/if}
       {#if entry.hasEnums}
@@ -59,7 +80,7 @@
           <div class="my-1">
             <a class="text-black dark:text-white hover:underline font-nunito uppercase scroll-mt-[70px]" id="{hrefSection}" href="#{hrefSection}">{sectionName}</a>
           </div>
-          <Table entry={entry.enums} sectionName={sectionName} imported={isImported(i)}/>
+          <Table entry={entry.enums} sectionName={sectionName} imported={isImported(i)} longNames={longNames}/>
         </div>
       {/if}
       {#if entry.hasExtensions}
@@ -69,7 +90,7 @@
           <div class="my-1">
             <a class="text-black dark:text-white hover:underline font-nunito uppercase scroll-mt-[70px]" id="{hrefSection}" href="#{hrefSection}">{sectionName}</a>
           </div>
-          <Table entry={entry.extensions} sectionName={sectionName} imported={isImported(i)}/>
+          <Table entry={entry.extensions} sectionName={sectionName} imported={isImported(i)} longNames={longNames}/>
         </div>
       {/if}
     {/if}

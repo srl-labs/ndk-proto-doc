@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let entry: any, sectionName: string, imported: boolean;
+	export let entry: any, sectionName: string, imported: boolean, longNames: string[];
 
 	// TAILWIND CLASS DEFINITION
 	const custom = {
@@ -22,6 +22,16 @@
 	// FORMAT DESCRIPTION
 	const fdesc = (d: string) => d.replaceAll('\n', '<br>');
 
+	const longOrFull = (longName: string, fullName: string) => {
+		if(imported) {
+			return fullName;
+		}
+		else {
+			if(longNames.includes(longName)) return longName
+			else return fullName;
+		}
+	}
+
 	// RE-GROUP BY KEY ON A LIST OF OBJECTS
 	const groupByKey = (list: any, key: string) => {
 		let regrouped = list.reduce(
@@ -40,9 +50,9 @@
 
 {#if sectionName != 'svt'}
 	{#each entry as item}
-		<div class="scroll-mt-[50px]" id={imported ? item.fullName : item.longName} />
+		<div class="scroll-mt-[50px]" id={longOrFull(item.longName, item.fullName)} />
 		<div class={custom.table.caption_cont}>
-			<a class={custom.table.caption} href="#{imported ? item.fullName : item.longName}"
+			<a class={custom.table.caption} href="#{longOrFull(item.longName, item.fullName)}"
 				>{item.longName}</a>
 			{#if item.description}
 				<p class={custom.table.desc}>{@html fdesc(item.description)}</p>
@@ -66,12 +76,12 @@
 									<td class={custom.table.td}>
 										<a
 											class={custom.table.link}
-											href="#{imported ? z.requestFullType : z.requestLongType}"
+											href="#{longOrFull(z.requestLongType, z.requestFullType)}"
 											>{z.requestLongType}</a>
 										{#if z.requestStreaming} stream {/if} <br />
 										<a
 											class={custom.table.link}
-											href="#{imported ? z.responseFullType : z.responseLongType}"
+											href="#{longOrFull(z.responseLongType, z.responseFullType)}"
 											>{z.responseLongType}</a>
 										{#if z.requestStreaming} stream {/if}
 									</td>
@@ -117,7 +127,7 @@
 											</th>
 										{/if}
 										<td class={custom.table.td}>
-											<a class={custom.table.link} href="#{imported ? z.fullType : z.longType}"
+											<a class={custom.table.link} href="#{longOrFull(z.longType, z.fullType)}"
 												>{z.longType}</a>
 										</td>
 										<td class={custom.table.td}>
@@ -169,13 +179,13 @@
 						<tr class={custom.table.tr}>
 							<th scope="row" class={custom.table.th_row}>{item.name}</th>
 							<td class="{custom.table.td}">
-								<a class={custom.table.link} href="#{imported ? item.fullType : item.longType}"
+								<a class={custom.table.link} href="#{longOrFull(item.longType, item.fullType)}"
 									>{item.longType}</a>
 							</td>
 							<td class="{custom.table.td}">
 								<a
 									class={custom.table.link}
-									href="#{imported ? item.containingFullType : item.containingLongType}"
+									href="#{longOrFull(item.containingLongType, item.containingFullType)}"
 									>{item.containingLongType}</a>
 							</td>
 							<td class="{custom.table.td}">{item.number}</td>
