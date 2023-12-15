@@ -5,17 +5,17 @@
 
 	import Footer from '$lib/components/Footer.svelte';
 
-	import type { Interfaces } from '$lib/interfaces';
+	import type { Services } from '$lib/interfaces';
 	import ifcLoad from '$lib/ndk.yaml?raw';
 
-	const interfaces = yaml.load(ifcLoad) as Interfaces;
-	const key = 'ndk';
+	const services = yaml.load(ifcLoad) as Services;
+	const key = 'services';
 
 	let panelList: any[] = [];
-	Object.keys(interfaces[key].services).forEach((el) => {
+	Object.keys(services[key]).forEach((el) => {
 		panelList.push({
-			name: interfaces[key].services[el].name,
-			desc: interfaces[key].services[el].description,
+			name: services[key][el].name,
+			desc: services[key][el].description,
 			href: `${key}/${el}`
 		});
 	});
