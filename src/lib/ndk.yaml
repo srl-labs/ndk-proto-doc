@@ -1,146 +1,144 @@
-srlinux:
-  name: SR Linux
-  services:
-    appid_service:
-      description:
-      name: App ID
-      versions:
-        v0.2.0:
-          documentation:
-          source:
-        # v0.1.1:
-        #   documentation:
-        #   source:
-        # v0.1.0:
-        #   documentation:
-        #   source:
-    bfd_service:
-      description:
-      name: BFD
-      versions:
-        v0.2.0:
-          documentation:
-          source:
-        # v0.1.1:
-        #   documentation:
-        #   source:
-        # v0.1.0:
-        #   documentation:
-        #   source:
-    config_service:
-      description:
-      name: Config
-      versions:
-        v0.2.0:
-          documentation:
-          source:
-        # v0.1.1:
-        #   documentation:
-        #   source:
-        # v0.1.0:
-        #   documentation:
-        #   source:
-    interface_service:
-      description:
-      name: Interface
-      versions:
-        v0.2.0:
-          documentation:
-          source:
-        # v0.1.1:
-        #   documentation:
-        #   source:
-        # v0.1.0:
-        #   documentation:
-        #   source:
-    lldp_service:
-      description:
-      name: LLDP
-      versions:
-        v0.2.0:
-          documentation:
-          source:
-        # v0.1.1:
-        #   documentation:
-        #   source:
-        # v0.1.0:
-        #   documentation:
-        #   source:
-    mpls_service:
-      description:
-      name: MPLS
-      versions:
-        v0.2.0:
-          documentation:
-          source:
-        # v0.1.1:
-        #   documentation:
-        #   source:
-        # v0.1.0:
-        #   documentation:
-        #   source:
-    networkinstance_service:
-      description:
-      name: Network Instance
-      versions:
-        v0.2.0:
-          documentation:
-          source:
-        # v0.1.1:
-        #   documentation:
-        #   source:
-        # v0.1.0:
-        #   documentation:
-        #   source:
-    nexthop_group_service:
-      description:
-      name: Next-hop Group
-      versions:
-        v0.2.0:
-          documentation:
-          source:
-        # v0.1.1:
-        #   documentation:
-        #   source:
-        # v0.1.0:
-        #   documentation:
-        #   source:
-    route_service:
-      description:
-      name: Route
-      versions:
-        v0.2.0:
-          documentation:
-          source:
-        # v0.1.1:
-        #   documentation:
-        #   source:
-        # v0.1.0:
-        #   documentation:
-        #   source:
-    sdk_service:
-      description:
-      name: SDK
-      versions:
-        v0.2.0:
-          documentation:
-          source:
-        # v0.1.1:
-        #   documentation:
-        #   source:
-        # v0.1.0:
-        #   documentation:
-        #   source:
-    telemetry_service:
-      description:
-      name: Telemetry
-      versions:
-        v0.2.0:
-          documentation:
-          source:
-        # v0.1.1:
-        #   documentation:
-        #   source:
-        # v0.1.0:
-        #   documentation:
-        #   source:
+services:
+  appid_service:
+    description:
+    name: App ID
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  bfd_service:
+    description:
+    name: BFD
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  config_service:
+    description:
+    name: Config
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  interface_service:
+    description:
+    name: Interface
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  lldp_service:
+    description:
+    name: LLDP
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  mpls_service:
+    description:
+    name: MPLS
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  networkinstance_service:
+    description:
+    name: Network Instance
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  nexthop_group_service:
+    description:
+    name: Next-hop Group
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  route_service:
+    description:
+    name: Route
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  sdk_service:
+    description:
+    name: SDK
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  telemetry_service:
+    description:
+    name: Telemetry
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:

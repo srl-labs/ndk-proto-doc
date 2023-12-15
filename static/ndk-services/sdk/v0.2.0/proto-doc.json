@@ -1578,7 +1578,7 @@
       "services": []
     },
     {
-      "name": "ndk/config_service.proto",
+      "name": "ndk/appid_service.proto",
       "description": "",
       "package": "srlinux.sdk",
       "hasEnums": false,
@@ -1589,54 +1589,18 @@
       "extensions": [],
       "messages": [
         {
-          "name": "ConfigData",
-          "longName": "ConfigData",
-          "fullName": "srlinux.sdk.ConfigData",
-          "description": "Represents configuration data.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": true,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "json",
-              "description": "Entire configuration fragment as JSON string",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "data_type",
-              "defaultValue": ""
-            },
-            {
-              "name": "data",
-              "description": "Entire configuration fragment as binary data",
-              "label": "",
-              "type": "bytes",
-              "longType": "bytes",
-              "fullType": "bytes",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "data_type",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "ConfigKey",
-          "longName": "ConfigKey",
-          "fullName": "srlinux.sdk.ConfigKey",
-          "description": "Represents configuration key.",
+          "name": "AppIdentData",
+          "longName": "AppIdentData",
+          "fullName": "srlinux.sdk.AppIdentData",
+          "description": "Represents appid data.",
           "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": false,
           "extensions": [],
           "fields": [
             {
-              "name": "js_path",
-              "description": "JSON path formatted string from YANG; for example, interface.my_field",
+              "name": "name",
+              "description": "Application name",
               "label": "",
               "type": "string",
               "longType": "string",
@@ -1647,178 +1611,8 @@
               "defaultValue": ""
             },
             {
-              "name": "keys",
-              "description": "Value for keys",
-              "label": "repeated",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "js_path_with_keys",
-              "description": "JSON path formatted string from YANG; for example, interface{.name==ethernet1/1}.my_field",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "ConfigNotification",
-          "longName": "ConfigNotification",
-          "fullName": "srlinux.sdk.ConfigNotification",
-          "description": "Represents configuration notification message to subscribe to configuration events",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "op",
-              "description": "Operation indicating create, delete, or update",
-              "label": "",
-              "type": "SdkMgrOperation",
-              "longType": "SdkMgrOperation",
-              "fullType": "srlinux.sdk.SdkMgrOperation",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "key",
-              "description": "Configuration key",
-              "label": "",
-              "type": "ConfigKey",
-              "longType": "ConfigKey",
-              "fullType": "srlinux.sdk.ConfigKey",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "data",
-              "description": "Configuration data",
-              "label": "",
-              "type": "ConfigData",
-              "longType": "ConfigData",
-              "fullType": "srlinux.sdk.ConfigData",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "ConfigSubscriptionRequest",
-          "longName": "ConfigSubscriptionRequest",
-          "fullName": "srlinux.sdk.ConfigSubscriptionRequest",
-          "description": "Represents configuration subscription request.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "key",
-              "description": "Optional, to filter on name",
-              "label": "",
-              "type": "ConfigKey",
-              "longType": "ConfigKey",
-              "fullType": "srlinux.sdk.ConfigKey",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        }
-      ],
-      "services": []
-    },
-    {
-      "name": "ndk/interface_service.proto",
-      "description": "",
-      "package": "srlinux.sdk",
-      "hasEnums": false,
-      "hasExtensions": false,
-      "hasMessages": true,
-      "hasServices": false,
-      "enums": [],
-      "extensions": [],
-      "messages": [
-        {
-          "name": "InterfaceData",
-          "longName": "InterfaceData",
-          "fullName": "srlinux.sdk.InterfaceData",
-          "description": "Represents interface data.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "admin_is_up",
-              "description": "Admin state",
-              "label": "",
-              "type": "uint32",
-              "longType": "uint32",
-              "fullType": "uint32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "mtu",
-              "description": "Maximum transmission unit",
-              "label": "",
-              "type": "uint32",
-              "longType": "uint32",
-              "fullType": "uint32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "if_type",
-              "description": "Interface type; for example, loopback, physical, or LAG",
-              "label": "",
-              "type": "IfMgrIfType",
-              "longType": "IfMgrIfType",
-              "fullType": "srlinux.sdk.IfMgrIfType",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "port_id",
-              "description": "Port identifier",
-              "label": "",
-              "type": "PortIdPb",
-              "longType": "PortIdPb",
-              "fullType": "srlinux.sdk.PortIdPb",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "description",
-              "description": "Interface description",
+              "name": "author",
+              "description": "Author name",
               "label": "",
               "type": "string",
               "longType": "string",
@@ -1829,209 +1623,8 @@
               "defaultValue": ""
             },
             {
-              "name": "mac_addr",
-              "description": "MAC address",
-              "label": "",
-              "type": "MacAddressPb",
-              "longType": "MacAddressPb",
-              "fullType": "srlinux.sdk.MacAddressPb",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "aggregate_id",
-              "description": "associated aggregate id",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "oper_is_up",
-              "description": "Operational state",
-              "label": "",
-              "type": "uint32",
-              "longType": "uint32",
-              "fullType": "uint32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "InterfaceKey",
-          "longName": "InterfaceKey",
-          "fullName": "srlinux.sdk.InterfaceKey",
-          "description": "Represents interface key.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "if_name",
-              "description": "Interface name; for example, ethernet 1/1",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "InterfaceNotification",
-          "longName": "InterfaceNotification",
-          "fullName": "srlinux.sdk.InterfaceNotification",
-          "description": "Represents interface notification.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "op",
-              "description": "Operation such as create, delete, or update",
-              "label": "",
-              "type": "SdkMgrOperation",
-              "longType": "SdkMgrOperation",
-              "fullType": "srlinux.sdk.SdkMgrOperation",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "key",
-              "description": "Interface key",
-              "label": "",
-              "type": "InterfaceKey",
-              "longType": "InterfaceKey",
-              "fullType": "srlinux.sdk.InterfaceKey",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "data",
-              "description": "Interface data",
-              "label": "",
-              "type": "InterfaceData",
-              "longType": "InterfaceData",
-              "fullType": "srlinux.sdk.InterfaceData",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "InterfaceSubscriptionRequest",
-          "longName": "InterfaceSubscriptionRequest",
-          "fullName": "srlinux.sdk.InterfaceSubscriptionRequest",
-          "description": "Represents interface subscription request.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "key",
-              "description": "Optional, to filter on name",
-              "label": "",
-              "type": "InterfaceKey",
-              "longType": "InterfaceKey",
-              "fullType": "srlinux.sdk.InterfaceKey",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        }
-      ],
-      "services": []
-    },
-    {
-      "name": "ndk/networkinstance_service.proto",
-      "description": "",
-      "package": "srlinux.sdk",
-      "hasEnums": false,
-      "hasExtensions": false,
-      "hasMessages": true,
-      "hasServices": false,
-      "enums": [
-        {
-          "name": "NetInstType",
-          "longName": "NetworkInstanceData.NetInstType",
-          "fullName": "srlinux.sdk.NetworkInstanceData.NetInstType",
-          "description": "Represents network instance type.",
-          "values": [
-            {
-              "name": "DEFAULT",
-              "number": "0",
-              "description": "Default network instance type"
-            },
-            {
-              "name": "L3VRF",
-              "number": "1",
-              "description": "L3VRF network instance type"
-            }
-          ]
-        }
-      ],
-      "extensions": [],
-      "messages": [
-        {
-          "name": "NetworkInstanceData",
-          "longName": "NetworkInstanceData",
-          "fullName": "srlinux.sdk.NetworkInstanceData",
-          "description": "Represents network instance data.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "net_inst_id",
-              "description": "Network instance identifier",
-              "label": "",
-              "type": "uint32",
-              "longType": "uint32",
-              "fullType": "uint32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "base_name",
-              "description": "Base name",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "oper_is_up",
-              "description": "Operation status",
+              "name": "is_connected",
+              "description": "Connected to IDB or not",
               "label": "",
               "type": "bool",
               "longType": "bool",
@@ -2042,8 +1635,8 @@
               "defaultValue": ""
             },
             {
-              "name": "router_id",
-              "description": "Router identifier",
+              "name": "version",
+              "description": "Version string",
               "label": "",
               "type": "string",
               "longType": "string",
@@ -2052,38 +1645,26 @@
               "isoneof": false,
               "oneofdecl": "",
               "defaultValue": ""
-            },
-            {
-              "name": "inst_type",
-              "description": "Network instance type",
-              "label": "",
-              "type": "NetInstType",
-              "longType": "NetworkInstanceData.NetInstType",
-              "fullType": "srlinux.sdk.NetworkInstanceData.NetInstType",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
             }
           ]
         },
         {
-          "name": "NetworkInstanceKey",
-          "longName": "NetworkInstanceKey",
-          "fullName": "srlinux.sdk.NetworkInstanceKey",
-          "description": "Represents network instance key.",
+          "name": "AppIdentKey",
+          "longName": "AppIdentKey",
+          "fullName": "srlinux.sdk.AppIdentKey",
+          "description": "Represents appid key.",
           "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": false,
           "extensions": [],
           "fields": [
             {
-              "name": "inst_name",
-              "description": "Network instance name",
+              "name": "id",
+              "description": "Application id",
               "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -2092,10 +1673,10 @@
           ]
         },
         {
-          "name": "NetworkInstanceNotification",
-          "longName": "NetworkInstanceNotification",
-          "fullName": "srlinux.sdk.NetworkInstanceNotification",
-          "description": "Represents network instance notification.",
+          "name": "AppIdentNotification",
+          "longName": "AppIdentNotification",
+          "fullName": "srlinux.sdk.AppIdentNotification",
+          "description": "Represents appid notification.",
           "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": false,
@@ -2115,11 +1696,11 @@
             },
             {
               "name": "key",
-              "description": "Network key",
+              "description": "AppIdent key",
               "label": "",
-              "type": "NetworkInstanceKey",
-              "longType": "NetworkInstanceKey",
-              "fullType": "srlinux.sdk.NetworkInstanceKey",
+              "type": "AppIdentKey",
+              "longType": "AppIdentKey",
+              "fullType": "srlinux.sdk.AppIdentKey",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -2127,11 +1708,11 @@
             },
             {
               "name": "data",
-              "description": "Network data",
+              "description": "AppIdent data",
               "label": "",
-              "type": "NetworkInstanceData",
-              "longType": "NetworkInstanceData",
-              "fullType": "srlinux.sdk.NetworkInstanceData",
+              "type": "AppIdentData",
+              "longType": "AppIdentData",
+              "fullType": "srlinux.sdk.AppIdentData",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -2140,83 +1721,10 @@
           ]
         },
         {
-          "name": "NetworkInstanceSubscriptionRequest",
-          "longName": "NetworkInstanceSubscriptionRequest",
-          "fullName": "srlinux.sdk.NetworkInstanceSubscriptionRequest",
-          "description": "Represents network instance subscription request.",
-          "hasExtensions": false,
-          "hasFields": false,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": []
-        }
-      ],
-      "services": []
-    },
-    {
-      "name": "ndk/route_service.proto",
-      "description": "",
-      "package": "srlinux.sdk",
-      "hasEnums": false,
-      "hasExtensions": false,
-      "hasMessages": true,
-      "hasServices": true,
-      "enums": [],
-      "extensions": [],
-      "messages": [
-        {
-          "name": "IpRouteNotification",
-          "longName": "IpRouteNotification",
-          "fullName": "srlinux.sdk.IpRouteNotification",
-          "description": "Represents IP route notification.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "op",
-              "description": "Operation such as create, delete, or update",
-              "label": "",
-              "type": "SdkMgrOperation",
-              "longType": "SdkMgrOperation",
-              "fullType": "srlinux.sdk.SdkMgrOperation",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "key",
-              "description": "IP route key",
-              "label": "",
-              "type": "RouteKeyPb",
-              "longType": "RouteKeyPb",
-              "fullType": "srlinux.sdk.RouteKeyPb",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "data",
-              "description": "IP route data",
-              "label": "",
-              "type": "RoutePb",
-              "longType": "RoutePb",
-              "fullType": "srlinux.sdk.RoutePb",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "IpRouteSubscriptionRequest",
-          "longName": "IpRouteSubscriptionRequest",
-          "fullName": "srlinux.sdk.IpRouteSubscriptionRequest",
-          "description": "Represents IP route subscription request.",
+          "name": "AppIdentSubscriptionRequest",
+          "longName": "AppIdentSubscriptionRequest",
+          "fullName": "srlinux.sdk.AppIdentSubscriptionRequest",
+          "description": "Represents appid subscription request.",
           "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": false,
@@ -2226,669 +1734,9 @@
               "name": "key",
               "description": "Optional, to filter on name",
               "label": "",
-              "type": "RouteKeyPb",
-              "longType": "RouteKeyPb",
-              "fullType": "srlinux.sdk.RouteKeyPb",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "RouteAddRequest",
-          "longName": "RouteAddRequest",
-          "fullName": "srlinux.sdk.RouteAddRequest",
-          "description": "Represents route add request; can contain more than one route.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "routes",
-              "description": "IP routes",
-              "label": "repeated",
-              "type": "RouteInfo",
-              "longType": "RouteInfo",
-              "fullType": "srlinux.sdk.RouteInfo",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "RouteAddResponse",
-          "longName": "RouteAddResponse",
-          "fullName": "srlinux.sdk.RouteAddResponse",
-          "description": "Represents route add response.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "status",
-              "description": "Status of route add operation",
-              "label": "",
-              "type": "SdkMgrStatus",
-              "longType": "SdkMgrStatus",
-              "fullType": "srlinux.sdk.SdkMgrStatus",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "error_str",
-              "description": "Detailed error string",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "RouteDeleteRequest",
-          "longName": "RouteDeleteRequest",
-          "fullName": "srlinux.sdk.RouteDeleteRequest",
-          "description": "Represents route delete request; can contain more than one route.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "routes",
-              "description": "IP routes",
-              "label": "repeated",
-              "type": "RouteKeyPb",
-              "longType": "RouteKeyPb",
-              "fullType": "srlinux.sdk.RouteKeyPb",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "RouteDeleteResponse",
-          "longName": "RouteDeleteResponse",
-          "fullName": "srlinux.sdk.RouteDeleteResponse",
-          "description": "Represents route delete response.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "status",
-              "description": "Status of route delete operation",
-              "label": "",
-              "type": "SdkMgrStatus",
-              "longType": "SdkMgrStatus",
-              "fullType": "srlinux.sdk.SdkMgrStatus",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "error_str",
-              "description": "Detailed error string",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "RouteInfo",
-          "longName": "RouteInfo",
-          "fullName": "srlinux.sdk.RouteInfo",
-          "description": "Represents route information.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "key",
-              "description": "Route key",
-              "label": "",
-              "type": "RouteKeyPb",
-              "longType": "RouteKeyPb",
-              "fullType": "srlinux.sdk.RouteKeyPb",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "data",
-              "description": "Route data",
-              "label": "",
-              "type": "RoutePb",
-              "longType": "RoutePb",
-              "fullType": "srlinux.sdk.RoutePb",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "RouteKeyPb",
-          "longName": "RouteKeyPb",
-          "fullName": "srlinux.sdk.RouteKeyPb",
-          "description": "Represents route key.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "net_inst_name",
-              "description": "Network instance name",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "ip_prefix",
-              "description": "IP prefix",
-              "label": "",
-              "type": "IpAddrPrefLenPb",
-              "longType": "IpAddrPrefLenPb",
-              "fullType": "srlinux.sdk.IpAddrPrefLenPb",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "RoutePb",
-          "longName": "RoutePb",
-          "fullName": "srlinux.sdk.RoutePb",
-          "description": "Represents route data.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "nexthop_group_name",
-              "description": "Next hop group name",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "preference",
-              "description": "Preference",
-              "label": "",
-              "type": "uint32",
-              "longType": "uint32",
-              "fullType": "uint32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "metric",
-              "description": "Metric",
-              "label": "",
-              "type": "uint32",
-              "longType": "uint32",
-              "fullType": "uint32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "nexthop",
-              "description": "List of next hops",
-              "label": "repeated",
-              "type": "NextHop",
-              "longType": "NextHop",
-              "fullType": "srlinux.sdk.NextHop",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "owner_id",
-              "description": "Next hop owner identifier returned only on notification.",
-              "label": "",
-              "type": "uint32",
-              "longType": "uint32",
-              "fullType": "uint32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "nhg_id",
-              "description": "Next-hop group identifier returned only on notification.",
-              "label": "",
-              "type": "uint64",
-              "longType": "uint64",
-              "fullType": "uint64",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        }
-      ],
-      "services": [
-        {
-          "name": "SdkMgrRouteService",
-          "longName": "SdkMgrRouteService",
-          "fullName": "srlinux.sdk.SdkMgrRouteService",
-          "description": "Represents service for IP route operations.",
-          "methods": [
-            {
-              "name": "RouteAddOrUpdate",
-              "description": "Add or update IP routes.",
-              "requestType": "RouteAddRequest",
-              "requestLongType": "RouteAddRequest",
-              "requestFullType": "srlinux.sdk.RouteAddRequest",
-              "requestStreaming": false,
-              "responseType": "RouteAddResponse",
-              "responseLongType": "RouteAddResponse",
-              "responseFullType": "srlinux.sdk.RouteAddResponse",
-              "responseStreaming": false
-            },
-            {
-              "name": "RouteDelete",
-              "description": "Delete IP routes.",
-              "requestType": "RouteDeleteRequest",
-              "requestLongType": "RouteDeleteRequest",
-              "requestFullType": "srlinux.sdk.RouteDeleteRequest",
-              "requestStreaming": false,
-              "responseType": "RouteDeleteResponse",
-              "responseLongType": "RouteDeleteResponse",
-              "responseFullType": "srlinux.sdk.RouteDeleteResponse",
-              "responseStreaming": false
-            },
-            {
-              "name": "SyncStart",
-              "description": "Synchronization start for IP routes",
-              "requestType": "SyncRequest",
-              "requestLongType": "SyncRequest",
-              "requestFullType": "srlinux.sdk.SyncRequest",
-              "requestStreaming": false,
-              "responseType": "SyncResponse",
-              "responseLongType": "SyncResponse",
-              "responseFullType": "srlinux.sdk.SyncResponse",
-              "responseStreaming": false
-            },
-            {
-              "name": "SyncEnd",
-              "description": "Synchronization end for IP routes",
-              "requestType": "SyncRequest",
-              "requestLongType": "SyncRequest",
-              "requestFullType": "srlinux.sdk.SyncRequest",
-              "requestStreaming": false,
-              "responseType": "SyncResponse",
-              "responseLongType": "SyncResponse",
-              "responseFullType": "srlinux.sdk.SyncResponse",
-              "responseStreaming": false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "ndk/lldp_service.proto",
-      "description": "",
-      "package": "srlinux.sdk",
-      "hasEnums": false,
-      "hasExtensions": false,
-      "hasMessages": true,
-      "hasServices": false,
-      "enums": [
-        {
-          "name": "PortSubType",
-          "longName": "LldpNeighborDataPb.PortSubType",
-          "fullName": "srlinux.sdk.LldpNeighborDataPb.PortSubType",
-          "description": "Represents port subtype.",
-          "values": [
-            {
-              "name": "RESERVED",
-              "number": "0",
-              "description": "Reserved for future use"
-            },
-            {
-              "name": "INTERFACE_ALIAS",
-              "number": "1",
-              "description": "Alias of the interface"
-            },
-            {
-              "name": "PORT_COMPONENT",
-              "number": "2",
-              "description": "Port identifier based on a locally defined port component"
-            },
-            {
-              "name": "MAC_ADDRESS",
-              "number": "3",
-              "description": "MAC address"
-            },
-            {
-              "name": "NETWORK_ADDRESS",
-              "number": "4",
-              "description": "Network address"
-            },
-            {
-              "name": "INTERFACE_NAME",
-              "number": "5",
-              "description": "Name of the interface"
-            },
-            {
-              "name": "AGENT_CIRCUIT_ID",
-              "number": "6",
-              "description": "Port identifier based on the circuit ID in the DHCP relay agent information option"
-            },
-            {
-              "name": "LOCALLY_ASSIGNED",
-              "number": "7",
-              "description": "Port identifier based on a locally defined alphanumeric string"
-            }
-          ]
-        },
-        {
-          "name": "ChassisIdType",
-          "longName": "LldpNeighborKeyPb.ChassisIdType",
-          "fullName": "srlinux.sdk.LldpNeighborKeyPb.ChassisIdType",
-          "description": "Represents chassis type.",
-          "values": [
-            {
-              "name": "RESERVED",
-              "number": "0",
-              "description": "Reserved for future use"
-            },
-            {
-              "name": "CHASSIS_COMPONENT",
-              "number": "1",
-              "description": "Chassis identifier based on a locally defined chassis component"
-            },
-            {
-              "name": "INTERFACE_ALIAS",
-              "number": "2",
-              "description": "Alias of the interface"
-            },
-            {
-              "name": "PORT_COMPONENT",
-              "number": "3",
-              "description": "Chassis identifier based on a locally defined port component"
-            },
-            {
-              "name": "MAC_ADDRESS",
-              "number": "4",
-              "description": "MAC address"
-            },
-            {
-              "name": "NETWORK_ADDRESS",
-              "number": "5",
-              "description": "Network address"
-            },
-            {
-              "name": "INTERFACE_NAME",
-              "number": "6",
-              "description": "Name of the interface"
-            },
-            {
-              "name": "LOCALLY_ASSIGNED",
-              "number": "7",
-              "description": "Chassis identifier based on a locally defined value"
-            }
-          ]
-        }
-      ],
-      "extensions": [],
-      "messages": [
-        {
-          "name": "LldpNeighborDataPb",
-          "longName": "LldpNeighborDataPb",
-          "fullName": "srlinux.sdk.LldpNeighborDataPb",
-          "description": "Represents LLDP neighbor data.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "port_id",
-              "description": "Port identifier",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "port_type",
-              "description": "Port type",
-              "label": "",
-              "type": "PortSubType",
-              "longType": "LldpNeighborDataPb.PortSubType",
-              "fullType": "srlinux.sdk.LldpNeighborDataPb.PortSubType",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "source_mac",
-              "description": "Port MAC address",
-              "label": "",
-              "type": "MacAddressPb",
-              "longType": "MacAddressPb",
-              "fullType": "srlinux.sdk.MacAddressPb",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "bgp_peer_address",
-              "description": "LLDP BGP autodiscovered addresses",
-              "label": "repeated",
-              "type": "IpAddressPb",
-              "longType": "IpAddressPb",
-              "fullType": "srlinux.sdk.IpAddressPb",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "bgp_group_id",
-              "description": "BGP group identifier",
-              "label": "",
-              "type": "uint32",
-              "longType": "uint32",
-              "fullType": "uint32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "system_name",
-              "description": "System name",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "system_description",
-              "description": "System description",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "LldpNeighborKeyPb",
-          "longName": "LldpNeighborKeyPb",
-          "fullName": "srlinux.sdk.LldpNeighborKeyPb",
-          "description": "Represents LLDP neighbor key.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "interface_name",
-              "description": "Local interface name",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "chassis_id",
-              "description": "Chassis identifier",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "chassis_type",
-              "description": "Chassis type",
-              "label": "",
-              "type": "ChassisIdType",
-              "longType": "LldpNeighborKeyPb.ChassisIdType",
-              "fullType": "srlinux.sdk.LldpNeighborKeyPb.ChassisIdType",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "LldpNeighborNotification",
-          "longName": "LldpNeighborNotification",
-          "fullName": "srlinux.sdk.LldpNeighborNotification",
-          "description": "Represents LLDP neighbor notification.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "op",
-              "description": "Operation such as create, delete, or update",
-              "label": "",
-              "type": "SdkMgrOperation",
-              "longType": "SdkMgrOperation",
-              "fullType": "srlinux.sdk.SdkMgrOperation",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "key",
-              "description": "LLDP neighbor key",
-              "label": "",
-              "type": "LldpNeighborKeyPb",
-              "longType": "LldpNeighborKeyPb",
-              "fullType": "srlinux.sdk.LldpNeighborKeyPb",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "data",
-              "description": "LLDP neighbor data",
-              "label": "",
-              "type": "LldpNeighborDataPb",
-              "longType": "LldpNeighborDataPb",
-              "fullType": "srlinux.sdk.LldpNeighborDataPb",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "LldpNeighborSubscriptionRequest",
-          "longName": "LldpNeighborSubscriptionRequest",
-          "fullName": "srlinux.sdk.LldpNeighborSubscriptionRequest",
-          "description": "Represents LLDP neighbor subscription request.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "key",
-              "description": "Optional, to filter on name",
-              "label": "",
-              "type": "LldpNeighborKeyPb",
-              "longType": "LldpNeighborKeyPb",
-              "fullType": "srlinux.sdk.LldpNeighborKeyPb",
+              "type": "AppIdentKey",
+              "longType": "AppIdentKey",
+              "fullType": "srlinux.sdk.AppIdentKey",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -3345,7 +2193,7 @@
       "services": []
     },
     {
-      "name": "ndk/appid_service.proto",
+      "name": "ndk/config_service.proto",
       "description": "",
       "package": "srlinux.sdk",
       "hasEnums": false,
@@ -3356,18 +2204,54 @@
       "extensions": [],
       "messages": [
         {
-          "name": "AppIdentData",
-          "longName": "AppIdentData",
-          "fullName": "srlinux.sdk.AppIdentData",
-          "description": "Represents appid data.",
+          "name": "ConfigData",
+          "longName": "ConfigData",
+          "fullName": "srlinux.sdk.ConfigData",
+          "description": "Represents configuration data.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "json",
+              "description": "Entire configuration fragment as JSON string",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "data_type",
+              "defaultValue": ""
+            },
+            {
+              "name": "data",
+              "description": "Entire configuration fragment as binary data",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "data_type",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ConfigKey",
+          "longName": "ConfigKey",
+          "fullName": "srlinux.sdk.ConfigKey",
+          "description": "Represents configuration key.",
           "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": false,
           "extensions": [],
           "fields": [
             {
-              "name": "name",
-              "description": "Application name",
+              "name": "js_path",
+              "description": "JSON path formatted string from YANG; for example, interface.my_field",
               "label": "",
               "type": "string",
               "longType": "string",
@@ -3378,9 +2262,9 @@
               "defaultValue": ""
             },
             {
-              "name": "author",
-              "description": "Author name",
-              "label": "",
+              "name": "keys",
+              "description": "Value for keys",
+              "label": "repeated",
               "type": "string",
               "longType": "string",
               "fullType": "string",
@@ -3390,20 +2274,8 @@
               "defaultValue": ""
             },
             {
-              "name": "is_connected",
-              "description": "Connected to IDB or not",
-              "label": "",
-              "type": "bool",
-              "longType": "bool",
-              "fullType": "bool",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "version",
-              "description": "Version string",
+              "name": "js_path_with_keys",
+              "description": "JSON path formatted string from YANG; for example, interface{.name==ethernet1/1}.my_field",
               "label": "",
               "type": "string",
               "longType": "string",
@@ -3416,18 +2288,188 @@
           ]
         },
         {
-          "name": "AppIdentKey",
-          "longName": "AppIdentKey",
-          "fullName": "srlinux.sdk.AppIdentKey",
-          "description": "Represents appid key.",
+          "name": "ConfigNotification",
+          "longName": "ConfigNotification",
+          "fullName": "srlinux.sdk.ConfigNotification",
+          "description": "Represents configuration notification message to subscribe to configuration events",
           "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": false,
           "extensions": [],
           "fields": [
             {
-              "name": "id",
-              "description": "Application id",
+              "name": "op",
+              "description": "Operation indicating create, delete, or update",
+              "label": "",
+              "type": "SdkMgrOperation",
+              "longType": "SdkMgrOperation",
+              "fullType": "srlinux.sdk.SdkMgrOperation",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "key",
+              "description": "Configuration key",
+              "label": "",
+              "type": "ConfigKey",
+              "longType": "ConfigKey",
+              "fullType": "srlinux.sdk.ConfigKey",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "data",
+              "description": "Configuration data",
+              "label": "",
+              "type": "ConfigData",
+              "longType": "ConfigData",
+              "fullType": "srlinux.sdk.ConfigData",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ConfigSubscriptionRequest",
+          "longName": "ConfigSubscriptionRequest",
+          "fullName": "srlinux.sdk.ConfigSubscriptionRequest",
+          "description": "Represents configuration subscription request.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "Optional, to filter on name",
+              "label": "",
+              "type": "ConfigKey",
+              "longType": "ConfigKey",
+              "fullType": "srlinux.sdk.ConfigKey",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    },
+    {
+      "name": "ndk/interface_service.proto",
+      "description": "",
+      "package": "srlinux.sdk",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "InterfaceData",
+          "longName": "InterfaceData",
+          "fullName": "srlinux.sdk.InterfaceData",
+          "description": "Represents interface data.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "admin_is_up",
+              "description": "Admin state",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "mtu",
+              "description": "Maximum transmission unit",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "if_type",
+              "description": "Interface type; for example, loopback, physical, or LAG",
+              "label": "",
+              "type": "IfMgrIfType",
+              "longType": "IfMgrIfType",
+              "fullType": "srlinux.sdk.IfMgrIfType",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "port_id",
+              "description": "Port identifier",
+              "label": "",
+              "type": "PortIdPb",
+              "longType": "PortIdPb",
+              "fullType": "srlinux.sdk.PortIdPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "description",
+              "description": "Interface description",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "mac_addr",
+              "description": "MAC address",
+              "label": "",
+              "type": "MacAddressPb",
+              "longType": "MacAddressPb",
+              "fullType": "srlinux.sdk.MacAddressPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "aggregate_id",
+              "description": "associated aggregate id",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "oper_is_up",
+              "description": "Operational state",
               "label": "",
               "type": "uint32",
               "longType": "uint32",
@@ -3440,10 +2482,34 @@
           ]
         },
         {
-          "name": "AppIdentNotification",
-          "longName": "AppIdentNotification",
-          "fullName": "srlinux.sdk.AppIdentNotification",
-          "description": "Represents appid notification.",
+          "name": "InterfaceKey",
+          "longName": "InterfaceKey",
+          "fullName": "srlinux.sdk.InterfaceKey",
+          "description": "Represents interface key.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "if_name",
+              "description": "Interface name; for example, ethernet 1/1",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "InterfaceNotification",
+          "longName": "InterfaceNotification",
+          "fullName": "srlinux.sdk.InterfaceNotification",
+          "description": "Represents interface notification.",
           "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": false,
@@ -3463,11 +2529,11 @@
             },
             {
               "name": "key",
-              "description": "AppIdent key",
+              "description": "Interface key",
               "label": "",
-              "type": "AppIdentKey",
-              "longType": "AppIdentKey",
-              "fullType": "srlinux.sdk.AppIdentKey",
+              "type": "InterfaceKey",
+              "longType": "InterfaceKey",
+              "fullType": "srlinux.sdk.InterfaceKey",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -3475,11 +2541,11 @@
             },
             {
               "name": "data",
-              "description": "AppIdent data",
+              "description": "Interface data",
               "label": "",
-              "type": "AppIdentData",
-              "longType": "AppIdentData",
-              "fullType": "srlinux.sdk.AppIdentData",
+              "type": "InterfaceData",
+              "longType": "InterfaceData",
+              "fullType": "srlinux.sdk.InterfaceData",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -3488,10 +2554,10 @@
           ]
         },
         {
-          "name": "AppIdentSubscriptionRequest",
-          "longName": "AppIdentSubscriptionRequest",
-          "fullName": "srlinux.sdk.AppIdentSubscriptionRequest",
-          "description": "Represents appid subscription request.",
+          "name": "InterfaceSubscriptionRequest",
+          "longName": "InterfaceSubscriptionRequest",
+          "fullName": "srlinux.sdk.InterfaceSubscriptionRequest",
+          "description": "Represents interface subscription request.",
           "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": false,
@@ -3501,15 +2567,530 @@
               "name": "key",
               "description": "Optional, to filter on name",
               "label": "",
-              "type": "AppIdentKey",
-              "longType": "AppIdentKey",
-              "fullType": "srlinux.sdk.AppIdentKey",
+              "type": "InterfaceKey",
+              "longType": "InterfaceKey",
+              "fullType": "srlinux.sdk.InterfaceKey",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
               "defaultValue": ""
             }
           ]
+        }
+      ],
+      "services": []
+    },
+    {
+      "name": "ndk/lldp_service.proto",
+      "description": "",
+      "package": "srlinux.sdk",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [
+        {
+          "name": "PortSubType",
+          "longName": "LldpNeighborDataPb.PortSubType",
+          "fullName": "srlinux.sdk.LldpNeighborDataPb.PortSubType",
+          "description": "Represents port subtype.",
+          "values": [
+            {
+              "name": "RESERVED",
+              "number": "0",
+              "description": "Reserved for future use"
+            },
+            {
+              "name": "INTERFACE_ALIAS",
+              "number": "1",
+              "description": "Alias of the interface"
+            },
+            {
+              "name": "PORT_COMPONENT",
+              "number": "2",
+              "description": "Port identifier based on a locally defined port component"
+            },
+            {
+              "name": "MAC_ADDRESS",
+              "number": "3",
+              "description": "MAC address"
+            },
+            {
+              "name": "NETWORK_ADDRESS",
+              "number": "4",
+              "description": "Network address"
+            },
+            {
+              "name": "INTERFACE_NAME",
+              "number": "5",
+              "description": "Name of the interface"
+            },
+            {
+              "name": "AGENT_CIRCUIT_ID",
+              "number": "6",
+              "description": "Port identifier based on the circuit ID in the DHCP relay agent information option"
+            },
+            {
+              "name": "LOCALLY_ASSIGNED",
+              "number": "7",
+              "description": "Port identifier based on a locally defined alphanumeric string"
+            }
+          ]
+        },
+        {
+          "name": "ChassisIdType",
+          "longName": "LldpNeighborKeyPb.ChassisIdType",
+          "fullName": "srlinux.sdk.LldpNeighborKeyPb.ChassisIdType",
+          "description": "Represents chassis type.",
+          "values": [
+            {
+              "name": "RESERVED",
+              "number": "0",
+              "description": "Reserved for future use"
+            },
+            {
+              "name": "CHASSIS_COMPONENT",
+              "number": "1",
+              "description": "Chassis identifier based on a locally defined chassis component"
+            },
+            {
+              "name": "INTERFACE_ALIAS",
+              "number": "2",
+              "description": "Alias of the interface"
+            },
+            {
+              "name": "PORT_COMPONENT",
+              "number": "3",
+              "description": "Chassis identifier based on a locally defined port component"
+            },
+            {
+              "name": "MAC_ADDRESS",
+              "number": "4",
+              "description": "MAC address"
+            },
+            {
+              "name": "NETWORK_ADDRESS",
+              "number": "5",
+              "description": "Network address"
+            },
+            {
+              "name": "INTERFACE_NAME",
+              "number": "6",
+              "description": "Name of the interface"
+            },
+            {
+              "name": "LOCALLY_ASSIGNED",
+              "number": "7",
+              "description": "Chassis identifier based on a locally defined value"
+            }
+          ]
+        }
+      ],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "LldpNeighborDataPb",
+          "longName": "LldpNeighborDataPb",
+          "fullName": "srlinux.sdk.LldpNeighborDataPb",
+          "description": "Represents LLDP neighbor data.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "port_id",
+              "description": "Port identifier",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "port_type",
+              "description": "Port type",
+              "label": "",
+              "type": "PortSubType",
+              "longType": "LldpNeighborDataPb.PortSubType",
+              "fullType": "srlinux.sdk.LldpNeighborDataPb.PortSubType",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "source_mac",
+              "description": "Port MAC address",
+              "label": "",
+              "type": "MacAddressPb",
+              "longType": "MacAddressPb",
+              "fullType": "srlinux.sdk.MacAddressPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "bgp_peer_address",
+              "description": "LLDP BGP autodiscovered addresses",
+              "label": "repeated",
+              "type": "IpAddressPb",
+              "longType": "IpAddressPb",
+              "fullType": "srlinux.sdk.IpAddressPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "bgp_group_id",
+              "description": "BGP group identifier",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "system_name",
+              "description": "System name",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "system_description",
+              "description": "System description",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "LldpNeighborKeyPb",
+          "longName": "LldpNeighborKeyPb",
+          "fullName": "srlinux.sdk.LldpNeighborKeyPb",
+          "description": "Represents LLDP neighbor key.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "interface_name",
+              "description": "Local interface name",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "chassis_id",
+              "description": "Chassis identifier",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "chassis_type",
+              "description": "Chassis type",
+              "label": "",
+              "type": "ChassisIdType",
+              "longType": "LldpNeighborKeyPb.ChassisIdType",
+              "fullType": "srlinux.sdk.LldpNeighborKeyPb.ChassisIdType",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "LldpNeighborNotification",
+          "longName": "LldpNeighborNotification",
+          "fullName": "srlinux.sdk.LldpNeighborNotification",
+          "description": "Represents LLDP neighbor notification.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "op",
+              "description": "Operation such as create, delete, or update",
+              "label": "",
+              "type": "SdkMgrOperation",
+              "longType": "SdkMgrOperation",
+              "fullType": "srlinux.sdk.SdkMgrOperation",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "key",
+              "description": "LLDP neighbor key",
+              "label": "",
+              "type": "LldpNeighborKeyPb",
+              "longType": "LldpNeighborKeyPb",
+              "fullType": "srlinux.sdk.LldpNeighborKeyPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "data",
+              "description": "LLDP neighbor data",
+              "label": "",
+              "type": "LldpNeighborDataPb",
+              "longType": "LldpNeighborDataPb",
+              "fullType": "srlinux.sdk.LldpNeighborDataPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "LldpNeighborSubscriptionRequest",
+          "longName": "LldpNeighborSubscriptionRequest",
+          "fullName": "srlinux.sdk.LldpNeighborSubscriptionRequest",
+          "description": "Represents LLDP neighbor subscription request.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "Optional, to filter on name",
+              "label": "",
+              "type": "LldpNeighborKeyPb",
+              "longType": "LldpNeighborKeyPb",
+              "fullType": "srlinux.sdk.LldpNeighborKeyPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    },
+    {
+      "name": "ndk/networkinstance_service.proto",
+      "description": "",
+      "package": "srlinux.sdk",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [
+        {
+          "name": "NetInstType",
+          "longName": "NetworkInstanceData.NetInstType",
+          "fullName": "srlinux.sdk.NetworkInstanceData.NetInstType",
+          "description": "Represents network instance type.",
+          "values": [
+            {
+              "name": "DEFAULT",
+              "number": "0",
+              "description": "Default network instance type"
+            },
+            {
+              "name": "L3VRF",
+              "number": "1",
+              "description": "L3VRF network instance type"
+            }
+          ]
+        }
+      ],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "NetworkInstanceData",
+          "longName": "NetworkInstanceData",
+          "fullName": "srlinux.sdk.NetworkInstanceData",
+          "description": "Represents network instance data.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "net_inst_id",
+              "description": "Network instance identifier",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "base_name",
+              "description": "Base name",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "oper_is_up",
+              "description": "Operation status",
+              "label": "",
+              "type": "bool",
+              "longType": "bool",
+              "fullType": "bool",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "router_id",
+              "description": "Router identifier",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "inst_type",
+              "description": "Network instance type",
+              "label": "",
+              "type": "NetInstType",
+              "longType": "NetworkInstanceData.NetInstType",
+              "fullType": "srlinux.sdk.NetworkInstanceData.NetInstType",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NetworkInstanceKey",
+          "longName": "NetworkInstanceKey",
+          "fullName": "srlinux.sdk.NetworkInstanceKey",
+          "description": "Represents network instance key.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "inst_name",
+              "description": "Network instance name",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NetworkInstanceNotification",
+          "longName": "NetworkInstanceNotification",
+          "fullName": "srlinux.sdk.NetworkInstanceNotification",
+          "description": "Represents network instance notification.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "op",
+              "description": "Operation such as create, delete, or update",
+              "label": "",
+              "type": "SdkMgrOperation",
+              "longType": "SdkMgrOperation",
+              "fullType": "srlinux.sdk.SdkMgrOperation",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "key",
+              "description": "Network key",
+              "label": "",
+              "type": "NetworkInstanceKey",
+              "longType": "NetworkInstanceKey",
+              "fullType": "srlinux.sdk.NetworkInstanceKey",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "data",
+              "description": "Network data",
+              "label": "",
+              "type": "NetworkInstanceData",
+              "longType": "NetworkInstanceData",
+              "fullType": "srlinux.sdk.NetworkInstanceData",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NetworkInstanceSubscriptionRequest",
+          "longName": "NetworkInstanceSubscriptionRequest",
+          "fullName": "srlinux.sdk.NetworkInstanceSubscriptionRequest",
+          "description": "Represents network instance subscription request.",
+          "hasExtensions": false,
+          "hasFields": false,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": []
         }
       ],
       "services": []
@@ -4003,6 +3584,425 @@
             {
               "name": "SyncEnd",
               "description": "Synchronization end to close synchronization operation.",
+              "requestType": "SyncRequest",
+              "requestLongType": "SyncRequest",
+              "requestFullType": "srlinux.sdk.SyncRequest",
+              "requestStreaming": false,
+              "responseType": "SyncResponse",
+              "responseLongType": "SyncResponse",
+              "responseFullType": "srlinux.sdk.SyncResponse",
+              "responseStreaming": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ndk/route_service.proto",
+      "description": "",
+      "package": "srlinux.sdk",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": true,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "IpRouteNotification",
+          "longName": "IpRouteNotification",
+          "fullName": "srlinux.sdk.IpRouteNotification",
+          "description": "Represents IP route notification.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "op",
+              "description": "Operation such as create, delete, or update",
+              "label": "",
+              "type": "SdkMgrOperation",
+              "longType": "SdkMgrOperation",
+              "fullType": "srlinux.sdk.SdkMgrOperation",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "key",
+              "description": "IP route key",
+              "label": "",
+              "type": "RouteKeyPb",
+              "longType": "RouteKeyPb",
+              "fullType": "srlinux.sdk.RouteKeyPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "data",
+              "description": "IP route data",
+              "label": "",
+              "type": "RoutePb",
+              "longType": "RoutePb",
+              "fullType": "srlinux.sdk.RoutePb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "IpRouteSubscriptionRequest",
+          "longName": "IpRouteSubscriptionRequest",
+          "fullName": "srlinux.sdk.IpRouteSubscriptionRequest",
+          "description": "Represents IP route subscription request.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "Optional, to filter on name",
+              "label": "",
+              "type": "RouteKeyPb",
+              "longType": "RouteKeyPb",
+              "fullType": "srlinux.sdk.RouteKeyPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "RouteAddRequest",
+          "longName": "RouteAddRequest",
+          "fullName": "srlinux.sdk.RouteAddRequest",
+          "description": "Represents route add request; can contain more than one route.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "routes",
+              "description": "IP routes",
+              "label": "repeated",
+              "type": "RouteInfo",
+              "longType": "RouteInfo",
+              "fullType": "srlinux.sdk.RouteInfo",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "RouteAddResponse",
+          "longName": "RouteAddResponse",
+          "fullName": "srlinux.sdk.RouteAddResponse",
+          "description": "Represents route add response.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "status",
+              "description": "Status of route add operation",
+              "label": "",
+              "type": "SdkMgrStatus",
+              "longType": "SdkMgrStatus",
+              "fullType": "srlinux.sdk.SdkMgrStatus",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "error_str",
+              "description": "Detailed error string",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "RouteDeleteRequest",
+          "longName": "RouteDeleteRequest",
+          "fullName": "srlinux.sdk.RouteDeleteRequest",
+          "description": "Represents route delete request; can contain more than one route.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "routes",
+              "description": "IP routes",
+              "label": "repeated",
+              "type": "RouteKeyPb",
+              "longType": "RouteKeyPb",
+              "fullType": "srlinux.sdk.RouteKeyPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "RouteDeleteResponse",
+          "longName": "RouteDeleteResponse",
+          "fullName": "srlinux.sdk.RouteDeleteResponse",
+          "description": "Represents route delete response.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "status",
+              "description": "Status of route delete operation",
+              "label": "",
+              "type": "SdkMgrStatus",
+              "longType": "SdkMgrStatus",
+              "fullType": "srlinux.sdk.SdkMgrStatus",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "error_str",
+              "description": "Detailed error string",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "RouteInfo",
+          "longName": "RouteInfo",
+          "fullName": "srlinux.sdk.RouteInfo",
+          "description": "Represents route information.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "Route key",
+              "label": "",
+              "type": "RouteKeyPb",
+              "longType": "RouteKeyPb",
+              "fullType": "srlinux.sdk.RouteKeyPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "data",
+              "description": "Route data",
+              "label": "",
+              "type": "RoutePb",
+              "longType": "RoutePb",
+              "fullType": "srlinux.sdk.RoutePb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "RouteKeyPb",
+          "longName": "RouteKeyPb",
+          "fullName": "srlinux.sdk.RouteKeyPb",
+          "description": "Represents route key.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "net_inst_name",
+              "description": "Network instance name",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "ip_prefix",
+              "description": "IP prefix",
+              "label": "",
+              "type": "IpAddrPrefLenPb",
+              "longType": "IpAddrPrefLenPb",
+              "fullType": "srlinux.sdk.IpAddrPrefLenPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "RoutePb",
+          "longName": "RoutePb",
+          "fullName": "srlinux.sdk.RoutePb",
+          "description": "Represents route data.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "nexthop_group_name",
+              "description": "Next hop group name",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "preference",
+              "description": "Preference",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "metric",
+              "description": "Metric",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "nexthop",
+              "description": "List of next hops",
+              "label": "repeated",
+              "type": "NextHop",
+              "longType": "NextHop",
+              "fullType": "srlinux.sdk.NextHop",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "owner_id",
+              "description": "Next hop owner identifier returned only on notification.",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "nhg_id",
+              "description": "Next-hop group identifier returned only on notification.",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "name": "SdkMgrRouteService",
+          "longName": "SdkMgrRouteService",
+          "fullName": "srlinux.sdk.SdkMgrRouteService",
+          "description": "Represents service for IP route operations.",
+          "methods": [
+            {
+              "name": "RouteAddOrUpdate",
+              "description": "Add or update IP routes.",
+              "requestType": "RouteAddRequest",
+              "requestLongType": "RouteAddRequest",
+              "requestFullType": "srlinux.sdk.RouteAddRequest",
+              "requestStreaming": false,
+              "responseType": "RouteAddResponse",
+              "responseLongType": "RouteAddResponse",
+              "responseFullType": "srlinux.sdk.RouteAddResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "RouteDelete",
+              "description": "Delete IP routes.",
+              "requestType": "RouteDeleteRequest",
+              "requestLongType": "RouteDeleteRequest",
+              "requestFullType": "srlinux.sdk.RouteDeleteRequest",
+              "requestStreaming": false,
+              "responseType": "RouteDeleteResponse",
+              "responseLongType": "RouteDeleteResponse",
+              "responseFullType": "srlinux.sdk.RouteDeleteResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "SyncStart",
+              "description": "Synchronization start for IP routes",
+              "requestType": "SyncRequest",
+              "requestLongType": "SyncRequest",
+              "requestFullType": "srlinux.sdk.SyncRequest",
+              "requestStreaming": false,
+              "responseType": "SyncResponse",
+              "responseLongType": "SyncResponse",
+              "responseFullType": "srlinux.sdk.SyncResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "SyncEnd",
+              "description": "Synchronization end for IP routes",
               "requestType": "SyncRequest",
               "requestLongType": "SyncRequest",
               "requestFullType": "srlinux.sdk.SyncRequest",

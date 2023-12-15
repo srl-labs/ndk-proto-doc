@@ -9,7 +9,7 @@
 	import ifcLoad from '$lib/ndk.yaml?raw';
 
 	const interfaces = yaml.load(ifcLoad) as Interfaces;
-	const key = 'srlinux';
+	const key = 'ndk';
 
 	let panelList: any[] = [];
 	Object.keys(interfaces[key].services).forEach((el) => {
