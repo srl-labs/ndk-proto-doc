@@ -39,7 +39,7 @@ export async function load({ url, fetch, params }) {
       const protoDoc = await resp.json();
 
       return {
-        services: service: s, version: v,
+        service: s, version: v,
         protoDoc: await protoDoc
       }
     } catch (e) {

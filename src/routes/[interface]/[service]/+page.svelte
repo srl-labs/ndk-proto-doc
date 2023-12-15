@@ -17,19 +17,19 @@
 	const s = data.service;
 	const v = data.version;
 
-	const vd = services[p].services[s].versions[v];
+	const vd = services['services'][s].versions[v];
 
 	const pd = data.protoDoc;
 	const files = pd.files;
 </script>
 
 <svelte:head>
-	<title>{services[p].name} - {services[p].services[s].name} {v}</title>
+	<title>NDK - {services['services'][s].name} {v}</title>
 </svelte:head>
 
 <div class="dark:bg-gray-800 pb-2">
 	<div class="lg:flex">
-		<Navigation interfaces={services} iKey={p} sKey={s} version={v} {files} srcDoc={vd} />
+		<Navigation services={services['services']} iKey={s} sKey={s} version={v} {files} srcDoc={vd} />
 		<TableLoader {files} scalarValueTypes={pd.scalarValueTypes} />
 	</div>
 </div>
