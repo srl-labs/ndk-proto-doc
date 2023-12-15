@@ -1,5 +1,5 @@
 export interface Services {
-    [key: string]: Service;
+    services: { [key: string]: Service };
 }
 
 export interface Service {
