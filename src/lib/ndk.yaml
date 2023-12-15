@@ -1,5 +1,31 @@
 services:
-  appid_service:
+  sdk:
+    description: Main service for the NDK
+    name: SDK
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  telemetry:
+    description: A service to manage application's state
+    name: Telemetry
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  appid:
     description:
     name: App ID
     versions:
@@ -12,7 +38,7 @@ services:
       # v0.1.0:
       #   documentation:
       #   source:
-  bfd_service:
+  bfd:
     description:
     name: BFD
     versions:
@@ -25,7 +51,7 @@ services:
       # v0.1.0:
       #   documentation:
       #   source:
-  config_service:
+  config:
     description:
     name: Config
     versions:
@@ -38,7 +64,7 @@ services:
       # v0.1.0:
       #   documentation:
       #   source:
-  interface_service:
+  interface:
     description:
     name: Interface
     versions:
@@ -51,7 +77,7 @@ services:
       # v0.1.0:
       #   documentation:
       #   source:
-  lldp_service:
+  lldp:
     description:
     name: LLDP
     versions:
@@ -64,7 +90,7 @@ services:
       # v0.1.0:
       #   documentation:
       #   source:
-  mpls_service:
+  mpls:
     description:
     name: MPLS
     versions:
@@ -77,7 +103,7 @@ services:
       # v0.1.0:
       #   documentation:
       #   source:
-  networkinstance_service:
+  networkinstance:
     description:
     name: Network Instance
     versions:
@@ -90,7 +116,7 @@ services:
       # v0.1.0:
       #   documentation:
       #   source:
-  nexthop_group_service:
+  nexthop_group:
     description:
     name: Next-hop Group
     versions:
@@ -103,35 +129,9 @@ services:
       # v0.1.0:
       #   documentation:
       #   source:
-  route_service:
+  route:
     description:
     name: Route
-    versions:
-      v0.2.0:
-        documentation:
-        source:
-      # v0.1.1:
-      #   documentation:
-      #   source:
-      # v0.1.0:
-      #   documentation:
-      #   source:
-  sdk_service:
-    description:
-    name: SDK
-    versions:
-      v0.2.0:
-        documentation:
-        source:
-      # v0.1.1:
-      #   documentation:
-      #   source:
-      # v0.1.0:
-      #   documentation:
-      #   source:
-  telemetry_service:
-    description:
-    name: Telemetry
     versions:
       v0.2.0:
         documentation:

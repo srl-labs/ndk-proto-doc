@@ -9,20 +9,25 @@
 	import ifcLoad from '$lib/ndk.yaml?raw';
 
 	const services = yaml.load(ifcLoad) as Services;
+	// key is the top level element in the ndk.yaml that groups all the services
 	const key = 'services';
+
+	// pathKey is the key to append to the path to get to the doc
+	// page of a particular service
+	const pathKey = 'doc';
 
 	let panelList: any[] = [];
 	Object.keys(services[key]).forEach((el) => {
 		panelList.push({
 			name: services[key][el].name,
 			desc: services[key][el].description,
-			href: `${key}/${el}`
+			href: `${pathKey}/${el}`
 		});
 	});
 </script>
 
 <svelte:head>
-	<title>SR Linux NDK Protobuf Documentation</title>
+	<title>SR Linux NDK Service Documentation</title>
 </svelte:head>
 
 <div class="flex flex-col items-center min-h-screen pt-5 has-header-img font-nunito">
