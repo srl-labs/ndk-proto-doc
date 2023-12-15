@@ -3,7 +3,7 @@ import { error, json } from '@sveltejs/kit';
 import yaml from 'js-yaml';
 
 import type { Interfaces } from '$lib/interfaces';
-import ifcLoad from '$lib/interfaces.yaml?raw';
+import ifcLoad from '$lib/ndk.yaml?raw';
 
 const interfaces = yaml.load(ifcLoad) as Interfaces;
 
@@ -37,12 +37,12 @@ export async function load({ url, fetch, params }) {
         const fetchUrl = `${pathUrl}/interfaces/${p}/${s}/${v}/proto-doc.json`;
         const resp = await fetch(fetchUrl);
         const protoDoc = await resp.json();
-      
+
         return {
           interface: p, service: s, version: v,
           protoDoc: await protoDoc
         }
-      } catch(e) {
+      } catch (e) {
         throw error(404, "Error fetching proto definition");
       }
     }

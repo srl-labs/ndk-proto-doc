@@ -6,7 +6,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 
 	import type { Interfaces } from '$lib/interfaces';
-	import ifcLoad from '$lib/interfaces.yaml?raw';
+	import ifcLoad from '$lib/ndk.yaml?raw';
 
 	const interfaces = yaml.load(ifcLoad) as Interfaces;
 	const key = 'srlinux';
