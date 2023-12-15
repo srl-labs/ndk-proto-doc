@@ -1,0 +1,1443 @@
+{
+  "files": [
+    {
+      "name": "ndk/nexthop_group_service.proto",
+      "description": "",
+      "package": "srlinux.sdk",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": true,
+      "enums": [
+        {
+          "name": "ResolutionType",
+          "longName": "NextHop.ResolutionType",
+          "fullName": "srlinux.sdk.NextHop.ResolutionType",
+          "description": "Represents resolution type.",
+          "values": [
+            {
+              "name": "INVALID",
+              "number": "0",
+              "description": "Invalid resolution"
+            },
+            {
+              "name": "REGULAR",
+              "number": "1",
+              "description": "Regular resolution"
+            },
+            {
+              "name": "MPLS",
+              "number": "2",
+              "description": "MPLS resolution"
+            }
+          ]
+        },
+        {
+          "name": "ResolveToType",
+          "longName": "NextHop.ResolveToType",
+          "fullName": "srlinux.sdk.NextHop.ResolveToType",
+          "description": "Represents resolve-to type.",
+          "values": [
+            {
+              "name": "LOCAL",
+              "number": "0",
+              "description": "Resolve to local routes"
+            },
+            {
+              "name": "DIRECT",
+              "number": "1",
+              "description": "Resolve to direct routes"
+            },
+            {
+              "name": "INDIRECT",
+              "number": "2",
+              "description": "Resolve to indirect routes"
+            }
+          ]
+        }
+      ],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "MplsNextHop",
+          "longName": "MplsNextHop",
+          "fullName": "srlinux.sdk.MplsNextHop",
+          "description": "Represents MPLS next hop.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "ip_nexthop",
+              "description": "Next-hop IP address",
+              "label": "",
+              "type": "IpAddressPb",
+              "longType": "IpAddressPb",
+              "fullType": "srlinux.sdk.IpAddressPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "label_stack",
+              "description": "MPLS label stack",
+              "label": "repeated",
+              "type": "MplsLabel",
+              "longType": "MplsLabel",
+              "fullType": "srlinux.sdk.MplsLabel",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NextHop",
+          "longName": "NextHop",
+          "fullName": "srlinux.sdk.NextHop",
+          "description": "Represents next-hop.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "resolve_to",
+              "description": "Resolve-to type",
+              "label": "",
+              "type": "ResolveToType",
+              "longType": "NextHop.ResolveToType",
+              "fullType": "srlinux.sdk.NextHop.ResolveToType",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "type",
+              "description": "Resolution type",
+              "label": "",
+              "type": "ResolutionType",
+              "longType": "NextHop.ResolutionType",
+              "fullType": "srlinux.sdk.NextHop.ResolutionType",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "ip_nexthop",
+              "description": "IP next-hop address",
+              "label": "",
+              "type": "IpAddressPb",
+              "longType": "IpAddressPb",
+              "fullType": "srlinux.sdk.IpAddressPb",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "nexthop",
+              "defaultValue": ""
+            },
+            {
+              "name": "mpls_nexthop",
+              "description": "MPLS next-hop",
+              "label": "",
+              "type": "MplsNextHop",
+              "longType": "MplsNextHop",
+              "fullType": "srlinux.sdk.MplsNextHop",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "nexthop",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NextHopGroup",
+          "longName": "NextHopGroup",
+          "fullName": "srlinux.sdk.NextHopGroup",
+          "description": "Represents next-hop group.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "next_hop",
+              "description": "Next-hops",
+              "label": "repeated",
+              "type": "NextHop",
+              "longType": "NextHop",
+              "fullType": "srlinux.sdk.NextHop",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NextHopGroupDeleteRequest",
+          "longName": "NextHopGroupDeleteRequest",
+          "fullName": "srlinux.sdk.NextHopGroupDeleteRequest",
+          "description": "Represents next-hop group delete request.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "group_key",
+              "description": "Next-hop group key details",
+              "label": "repeated",
+              "type": "NextHopGroupKey",
+              "longType": "NextHopGroupKey",
+              "fullType": "srlinux.sdk.NextHopGroupKey",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NextHopGroupDeleteResponse",
+          "longName": "NextHopGroupDeleteResponse",
+          "fullName": "srlinux.sdk.NextHopGroupDeleteResponse",
+          "description": "Represents next-hop group delete response.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "status",
+              "description": "Response for next-hop group request",
+              "label": "",
+              "type": "SdkMgrStatus",
+              "longType": "SdkMgrStatus",
+              "fullType": "srlinux.sdk.SdkMgrStatus",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "error_str",
+              "description": "Detailed error string",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NextHopGroupInfo",
+          "longName": "NextHopGroupInfo",
+          "fullName": "srlinux.sdk.NextHopGroupInfo",
+          "description": "Represents next-hop group information.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "Next-hop group key",
+              "label": "",
+              "type": "NextHopGroupKey",
+              "longType": "NextHopGroupKey",
+              "fullType": "srlinux.sdk.NextHopGroupKey",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "data",
+              "description": "Next-hop group data",
+              "label": "",
+              "type": "NextHopGroup",
+              "longType": "NextHopGroup",
+              "fullType": "srlinux.sdk.NextHopGroup",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NextHopGroupKey",
+          "longName": "NextHopGroupKey",
+          "fullName": "srlinux.sdk.NextHopGroupKey",
+          "description": "Represents next-hop group key.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "name",
+              "description": "Next-hop group name",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "network_instance_name",
+              "description": "Next-hop group network instance name",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NextHopGroupNotification",
+          "longName": "NextHopGroupNotification",
+          "fullName": "srlinux.sdk.NextHopGroupNotification",
+          "description": "Represents next-hop group notification.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "op",
+              "description": "Operation such as create, delete, or update",
+              "label": "",
+              "type": "SdkMgrOperation",
+              "longType": "SdkMgrOperation",
+              "fullType": "srlinux.sdk.SdkMgrOperation",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "key",
+              "description": "Next-hop group key",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "data",
+              "description": "Next-hop group data",
+              "label": "",
+              "type": "NextHopGroup",
+              "longType": "NextHopGroup",
+              "fullType": "srlinux.sdk.NextHopGroup",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NextHopGroupRequest",
+          "longName": "NextHopGroupRequest",
+          "fullName": "srlinux.sdk.NextHopGroupRequest",
+          "description": "Represents next-hop group request.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "group_info",
+              "description": "Next-hop group details",
+              "label": "repeated",
+              "type": "NextHopGroupInfo",
+              "longType": "NextHopGroupInfo",
+              "fullType": "srlinux.sdk.NextHopGroupInfo",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NextHopGroupResponse",
+          "longName": "NextHopGroupResponse",
+          "fullName": "srlinux.sdk.NextHopGroupResponse",
+          "description": "Represents next-hop group response.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "status",
+              "description": "Response for next-hop group request",
+              "label": "",
+              "type": "SdkMgrStatus",
+              "longType": "SdkMgrStatus",
+              "fullType": "srlinux.sdk.SdkMgrStatus",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "error_str",
+              "description": "Detailed error string",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NextHopGroupSubscriptionRequest",
+          "longName": "NextHopGroupSubscriptionRequest",
+          "fullName": "srlinux.sdk.NextHopGroupSubscriptionRequest",
+          "description": "Represents next-hop group subscription request.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "Optional, to filter on name",
+              "label": "",
+              "type": "NextHopGroupKey",
+              "longType": "NextHopGroupKey",
+              "fullType": "srlinux.sdk.NextHopGroupKey",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "name": "SdkMgrNextHopGroupService",
+          "longName": "SdkMgrNextHopGroupService",
+          "fullName": "srlinux.sdk.SdkMgrNextHopGroupService",
+          "description": "Represents service for next-hop group operations.",
+          "methods": [
+            {
+              "name": "NextHopGroupAddOrUpdate",
+              "description": "Add or update one or more next-hop groups.",
+              "requestType": "NextHopGroupRequest",
+              "requestLongType": "NextHopGroupRequest",
+              "requestFullType": "srlinux.sdk.NextHopGroupRequest",
+              "requestStreaming": false,
+              "responseType": "NextHopGroupResponse",
+              "responseLongType": "NextHopGroupResponse",
+              "responseFullType": "srlinux.sdk.NextHopGroupResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "NextHopGroupDelete",
+              "description": "Delete next-hop group.",
+              "requestType": "NextHopGroupDeleteRequest",
+              "requestLongType": "NextHopGroupDeleteRequest",
+              "requestFullType": "srlinux.sdk.NextHopGroupDeleteRequest",
+              "requestStreaming": false,
+              "responseType": "NextHopGroupDeleteResponse",
+              "responseLongType": "NextHopGroupDeleteResponse",
+              "responseFullType": "srlinux.sdk.NextHopGroupDeleteResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "SyncStart",
+              "description": "Synchronization start to open synchronization operation.",
+              "requestType": "SyncRequest",
+              "requestLongType": "SyncRequest",
+              "requestFullType": "srlinux.sdk.SyncRequest",
+              "requestStreaming": false,
+              "responseType": "SyncResponse",
+              "responseLongType": "SyncResponse",
+              "responseFullType": "srlinux.sdk.SyncResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "SyncEnd",
+              "description": "Synchronization end to close synchronization operation.",
+              "requestType": "SyncRequest",
+              "requestLongType": "SyncRequest",
+              "requestFullType": "srlinux.sdk.SyncRequest",
+              "requestStreaming": false,
+              "responseType": "SyncResponse",
+              "responseLongType": "SyncResponse",
+              "responseFullType": "srlinux.sdk.SyncResponse",
+              "responseStreaming": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ndk/sdk_common.proto",
+      "description": "",
+      "package": "srlinux.sdk",
+      "hasEnums": true,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [
+        {
+          "name": "IfEthernetDuplexModeType",
+          "longName": "IfEthernetDuplexModeType",
+          "fullName": "srlinux.sdk.IfEthernetDuplexModeType",
+          "description": "Represents interface ethernet duplex mode. Corresponds to yang values",
+          "values": [
+            {
+              "name": "IF_ETH_DUPLEX_MODE_UNSET",
+              "number": "0",
+              "description": "duplex mode not supported"
+            },
+            {
+              "name": "IF_ETH_DUPLEX_MODE_FULL",
+              "number": "1",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_DUPLEX_MODE_HALF",
+              "number": "2",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "name": "IfEthernetPortSpeedType",
+          "longName": "IfEthernetPortSpeedType",
+          "fullName": "srlinux.sdk.IfEthernetPortSpeedType",
+          "description": "Represents interface ethernet port speed. Corresponds to yang values",
+          "values": [
+            {
+              "name": "IF_ETH_PORT_SPEED_UNSET",
+              "number": "0",
+              "description": "Speed unknown"
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_10M",
+              "number": "1",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_100M",
+              "number": "2",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_1G",
+              "number": "3",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_10G",
+              "number": "4",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_25G",
+              "number": "5",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_40G",
+              "number": "6",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_50G",
+              "number": "7",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_100G",
+              "number": "8",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_200G",
+              "number": "9",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_400G",
+              "number": "10",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_1T",
+              "number": "11",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "name": "IfMgrIfType",
+          "longName": "IfMgrIfType",
+          "fullName": "srlinux.sdk.IfMgrIfType",
+          "description": "Represents interface type.",
+          "values": [
+            {
+              "name": "ETHERNET",
+              "number": "0",
+              "description": "Ethernet interface"
+            },
+            {
+              "name": "LOOPBACK",
+              "number": "1",
+              "description": "Loopback interface"
+            },
+            {
+              "name": "MANAGEMENT",
+              "number": "2",
+              "description": "Management interface"
+            },
+            {
+              "name": "AGGREGATE",
+              "number": "3",
+              "description": "Aggregate(LAG) interface"
+            },
+            {
+              "name": "IRB",
+              "number": "4",
+              "description": "Integrated Routing and Bridging (IRB) interface"
+            },
+            {
+              "name": "SYSTEM",
+              "number": "5",
+              "description": "System interface"
+            },
+            {
+              "name": "LIF",
+              "number": "6",
+              "description": "linux interface"
+            },
+            {
+              "name": "NIC",
+              "number": "7",
+              "description": "linux nic interface (bus/dev/fn)"
+            },
+            {
+              "name": "VHOST",
+              "number": "8",
+              "description": "vhost-net interface, vhn-\u003cname\u003e name for sock-path"
+            },
+            {
+              "name": "KKLIF",
+              "number": "9",
+              "description": "temp name for new style of lif interface"
+            },
+            {
+              "name": "KKVHOST",
+              "number": "10",
+              "description": "temp name for new style of vhost interface"
+            },
+            {
+              "name": "MAX",
+              "number": "11",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "name": "IfOperDownReason",
+          "longName": "IfOperDownReason",
+          "fullName": "srlinux.sdk.IfOperDownReason",
+          "description": "",
+          "values": [
+            {
+              "name": "IF_OPER_DOWN_NONE",
+              "number": "0",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_PORT_ADMIN_DISABLED",
+              "number": "1",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_MDA_ADMIN_DISABLED",
+              "number": "2",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_TRANS_LASER_DISABLED",
+              "number": "3",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_MDA_NOT_PRESENT",
+              "number": "4",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_TRANS_NOT_PRESENT",
+              "number": "5",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_PHY_INIT",
+              "number": "6",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_LOOPBACK",
+              "number": "7",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_LOWER_LAYER_DOWN",
+              "number": "8",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_MTU_RESOURCES",
+              "number": "9",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_UNSUPPORTED_SPEED",
+              "number": "10",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_UNSUPPORTED_TRANS_FEC",
+              "number": "11",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_OTHER",
+              "number": "12",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_PORT_NOT_PRESENT",
+              "number": "13",
+              "description": "used internally by chassis mgr only - xdp never publish to IDB!"
+            },
+            {
+              "name": "IF_OPER_DOWN_FABRIC_AVAILABILITY",
+              "number": "14",
+              "description": "used internally by chassis mgr only - xdp never publish to IDB!"
+            },
+            {
+              "name": "IF_OPER_DOWN_NO_ACTIVE_LINKS",
+              "number": "15",
+              "description": "lag interface only"
+            },
+            {
+              "name": "IF_OPER_DOWN_MIN_LINK_THRESHOLD",
+              "number": "16",
+              "description": "lag interface only"
+            },
+            {
+              "name": "IF_OPER_DOWN_9_12_SPEED_MISMATCH",
+              "number": "17",
+              "description": "Vodka port 9-12 must all be same speed as port 9"
+            },
+            {
+              "name": "IF_OPER_DOWN_LAG_RESOURCES",
+              "number": "18",
+              "description": "lag interface only"
+            },
+            {
+              "name": "IF_OPER_DOWN_LAG_MEMBER_RESOURCES",
+              "number": "19",
+              "description": "lag member interface only"
+            },
+            {
+              "name": "IF_OPER_DOWN_STANDBY_SIGNALING",
+              "number": "20",
+              "description": "ESM multihoming"
+            },
+            {
+              "name": "IF_OPER_DOWN_HOLD_TIME_UP_ACTIVE",
+              "number": "21",
+              "description": "interface hold-time up is actively holding the interface down"
+            },
+            {
+              "name": "IF_OPER_DOWN_RELOAD_TIME_ACTIVE",
+              "number": "22",
+              "description": "interface reload time is actively holding the interface down"
+            },
+            {
+              "name": "IF_OPER_DOWN_CONNECTOR_DOWN",
+              "number": "23",
+              "description": "parent connector oper down forces breakout port oper down"
+            },
+            {
+              "name": "IF_OPER_DOWN_AUTO_NEG_MISMATCH",
+              "number": "24",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_EVENT_HANDLER",
+              "number": "25",
+              "description": "used internally by chassis mgr only - xdp never publish to IDB!"
+            }
+          ]
+        },
+        {
+          "name": "IfOperStateType",
+          "longName": "IfOperStateType",
+          "fullName": "srlinux.sdk.IfOperStateType",
+          "description": "Represents interface operational state.",
+          "values": [
+            {
+              "name": "IF_OPER_STATE_UP",
+              "number": "0",
+              "description": "Interface operational state up"
+            },
+            {
+              "name": "IF_OPER_STATE_DOWN",
+              "number": "1",
+              "description": "Interface operational state down"
+            },
+            {
+              "name": "IF_OPER_STATE_TESTING",
+              "number": "2",
+              "description": "Interface operational state testing"
+            },
+            {
+              "name": "IF_OPER_STATE_UNKNOWN",
+              "number": "3",
+              "description": "Interface operational state unknown"
+            },
+            {
+              "name": "IF_OPER_STATE_DORMANT",
+              "number": "4",
+              "description": "Interface operational state dormant"
+            },
+            {
+              "name": "IF_OPER_STATE_NOT_PRESENT",
+              "number": "5",
+              "description": "Interface operational state not present"
+            },
+            {
+              "name": "IF_OPER_STATE_LOWER_LAYER_DOWN",
+              "number": "6",
+              "description": "Interface operational state lower layer down"
+            }
+          ]
+        },
+        {
+          "name": "IfTransceiverFecType",
+          "longName": "IfTransceiverFecType",
+          "fullName": "srlinux.sdk.IfTransceiverFecType",
+          "description": "Represents interface transceiver fec. Corresponds to yang values",
+          "values": [
+            {
+              "name": "IF_TRANS_FEC_UNSET",
+              "number": "0",
+              "description": "Fec unknown"
+            },
+            {
+              "name": "IF_TRANS_FEC_DISABLED",
+              "number": "1",
+              "description": ""
+            },
+            {
+              "name": "IF_TRANS_FEC_RS528",
+              "number": "2",
+              "description": ""
+            },
+            {
+              "name": "IF_TRANS_FEC_RS544",
+              "number": "3",
+              "description": ""
+            },
+            {
+              "name": "IF_TRANS_FEC_BASER",
+              "number": "4",
+              "description": ""
+            },
+            {
+              "name": "IF_TRANS_FEC_RS108",
+              "number": "5",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "name": "IpAddressState",
+          "longName": "IpAddressState",
+          "fullName": "srlinux.sdk.IpAddressState",
+          "description": "Represents IP address state.",
+          "values": [
+            {
+              "name": "IPADDR_STATE_UNKNOWN",
+              "number": "0",
+              "description": "IP address state unknown"
+            },
+            {
+              "name": "IPADDR_STATE_TENTATIVE",
+              "number": "1",
+              "description": "IP address state tentative"
+            },
+            {
+              "name": "IPADDR_STATE_DUPLICATED",
+              "number": "2",
+              "description": "IP address state duplicated"
+            },
+            {
+              "name": "IPADDR_STATE_INACCESSIBLE",
+              "number": "3",
+              "description": "IP address state inaccessible"
+            },
+            {
+              "name": "IPADDR_STATE_DEPRECATED",
+              "number": "4",
+              "description": "IP address state deprecated"
+            },
+            {
+              "name": "IPADDR_STATE_PREFERRED",
+              "number": "5",
+              "description": "IP address state preferred"
+            }
+          ]
+        },
+        {
+          "name": "SdkMgrOperation",
+          "longName": "SdkMgrOperation",
+          "fullName": "srlinux.sdk.SdkMgrOperation",
+          "description": "Represents enumeration value for operation in subscription.",
+          "values": [
+            {
+              "name": "Create",
+              "number": "0",
+              "description": "Create operation"
+            },
+            {
+              "name": "Update",
+              "number": "1",
+              "description": "Update operation"
+            },
+            {
+              "name": "Delete",
+              "number": "2",
+              "description": "Delete operation"
+            }
+          ]
+        },
+        {
+          "name": "SdkMgrStatus",
+          "longName": "SdkMgrStatus",
+          "fullName": "srlinux.sdk.SdkMgrStatus",
+          "description": "Represents status of network programming service calls.",
+          "values": [
+            {
+              "name": "kSdkMgrSuccess",
+              "number": "0",
+              "description": "Successful service call"
+            },
+            {
+              "name": "kSdkMgrFailed",
+              "number": "1",
+              "description": "Failed service call"
+            }
+          ]
+        }
+      ],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "AgentReply",
+          "longName": "AgentReply",
+          "fullName": "srlinux.sdk.AgentReply",
+          "description": "Empty message from agent.",
+          "hasExtensions": false,
+          "hasFields": false,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "EvpnEthSegIdPb",
+          "longName": "EvpnEthSegIdPb",
+          "fullName": "srlinux.sdk.EvpnEthSegIdPb",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "es_id",
+              "description": "Type 0 for now. hard-coded id",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "GlobalIfId",
+          "longName": "GlobalIfId",
+          "fullName": "srlinux.sdk.GlobalIfId",
+          "description": "Represents global interface identifier.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "global_if_id",
+              "description": "Global interface identifier",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "IpAddrPrefLenPb",
+          "longName": "IpAddrPrefLenPb",
+          "fullName": "srlinux.sdk.IpAddrPrefLenPb",
+          "description": "Represents IP prefix.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "ip_addr",
+              "description": "IP address",
+              "label": "",
+              "type": "IpAddressPb",
+              "longType": "IpAddressPb",
+              "fullType": "srlinux.sdk.IpAddressPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "prefix_length",
+              "description": "IP address prefix length",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "IpAddressPb",
+          "longName": "IpAddressPb",
+          "fullName": "srlinux.sdk.IpAddressPb",
+          "description": "Represents IP address.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "addr",
+              "description": "IP address",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "IpInterfaceAddrPrefixPb",
+          "longName": "IpInterfaceAddrPrefixPb",
+          "fullName": "srlinux.sdk.IpInterfaceAddrPrefixPb",
+          "description": "Represents IP prefix state.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "prefix",
+              "description": "IP prefix",
+              "label": "",
+              "type": "IpAddrPrefLenPb",
+              "longType": "IpAddrPrefLenPb",
+              "fullType": "srlinux.sdk.IpAddrPrefLenPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "state",
+              "description": "IP prefix state",
+              "label": "",
+              "type": "IpAddressState",
+              "longType": "IpAddressState",
+              "fullType": "srlinux.sdk.IpAddressState",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "MacAddressPb",
+          "longName": "MacAddressPb",
+          "fullName": "srlinux.sdk.MacAddressPb",
+          "description": "Represents MAC address.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "mac_address",
+              "description": "MAC address",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "MplsLabel",
+          "longName": "MplsLabel",
+          "fullName": "srlinux.sdk.MplsLabel",
+          "description": "Represents MPLS label.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "mpls_label",
+              "description": "MPLS label",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NetInstanceId",
+          "longName": "NetInstanceId",
+          "fullName": "srlinux.sdk.NetInstanceId",
+          "description": "Represents network instance identifier.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "instance_id",
+              "description": "Network instance identifier",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "PortIdPb",
+          "longName": "PortIdPb",
+          "fullName": "srlinux.sdk.PortIdPb",
+          "description": "Represents port identifier.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "port_id",
+              "description": "Port identifier",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "SyncRequest",
+          "longName": "SyncRequest",
+          "fullName": "srlinux.sdk.SyncRequest",
+          "description": "Empty message for synchronization request.",
+          "hasExtensions": false,
+          "hasFields": false,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "SyncResponse",
+          "longName": "SyncResponse",
+          "fullName": "srlinux.sdk.SyncResponse",
+          "description": "Empty message for synchronization end.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "status",
+              "description": "Error code",
+              "label": "",
+              "type": "SdkMgrStatus",
+              "longType": "SdkMgrStatus",
+              "fullType": "srlinux.sdk.SdkMgrStatus",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "error_str",
+              "description": "Detailed error string",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    }
+  ],
+  "scalarValueTypes": [
+    {
+      "protoType": "double",
+      "notes": "",
+      "cppType": "double",
+      "csType": "double",
+      "goType": "float64",
+      "javaType": "double",
+      "phpType": "float",
+      "pythonType": "float",
+      "rubyType": "Float"
+    },
+    {
+      "protoType": "float",
+      "notes": "",
+      "cppType": "float",
+      "csType": "float",
+      "goType": "float32",
+      "javaType": "float",
+      "phpType": "float",
+      "pythonType": "float",
+      "rubyType": "Float"
+    },
+    {
+      "protoType": "int32",
+      "notes": "Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "int64",
+      "notes": "Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "uint32",
+      "notes": "Uses variable-length encoding.",
+      "cppType": "uint32",
+      "csType": "uint",
+      "goType": "uint32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int/long",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "uint64",
+      "notes": "Uses variable-length encoding.",
+      "cppType": "uint64",
+      "csType": "ulong",
+      "goType": "uint64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sint32",
+      "notes": "Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sint64",
+      "notes": "Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "fixed32",
+      "notes": "Always four bytes. More efficient than uint32 if values are often greater than 2^28.",
+      "cppType": "uint32",
+      "csType": "uint",
+      "goType": "uint32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "fixed64",
+      "notes": "Always eight bytes. More efficient than uint64 if values are often greater than 2^56.",
+      "cppType": "uint64",
+      "csType": "ulong",
+      "goType": "uint64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "sfixed32",
+      "notes": "Always four bytes.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sfixed64",
+      "notes": "Always eight bytes.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "bool",
+      "notes": "",
+      "cppType": "bool",
+      "csType": "bool",
+      "goType": "bool",
+      "javaType": "boolean",
+      "phpType": "boolean",
+      "pythonType": "boolean",
+      "rubyType": "TrueClass/FalseClass"
+    },
+    {
+      "protoType": "string",
+      "notes": "A string must always contain UTF-8 encoded or 7-bit ASCII text.",
+      "cppType": "string",
+      "csType": "string",
+      "goType": "string",
+      "javaType": "String",
+      "phpType": "string",
+      "pythonType": "str/unicode",
+      "rubyType": "String (UTF-8)"
+    },
+    {
+      "protoType": "bytes",
+      "notes": "May contain any arbitrary sequence of bytes.",
+      "cppType": "string",
+      "csType": "ByteString",
+      "goType": "[]byte",
+      "javaType": "ByteString",
+      "phpType": "string",
+      "pythonType": "str",
+      "rubyType": "String (ASCII-8BIT)"
+    }
+  ]
+}
