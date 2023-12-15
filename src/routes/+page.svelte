@@ -30,13 +30,13 @@
 	<title>SR Linux NDK Service Documentation</title>
 </svelte:head>
 
-<div class="flex flex-col items-center min-h-screen pt-5 has-header-img font-nunito">
-	<div class="flex-grow-1 flex-shrink-0 m-auto px-10">
+<div class="flex flex-col items-center min-h-screen has-header-img font-nunito">
+	<div class="flex-grow-1 flex-shrink-0 m-auto p-10">
 		<div class="md:grid md:grid-cols-2 md:gap-20 md:items-center">
 			<div>
 				<p class="mb-4"><img src="/images/nokia_w.svg" width="100" alt="Logo" /></p>
 				<h3 class="text-3xl text-yellow-200 font-light mt-6">SR Linux NDK Service Documentation</h3>
-				<div class="text-white mt-4 max-w-[450px] text-m">
+				<div class="text-white mt-4 max-w-[450px] text-sm">
 					<p>
 						SR Linux empowers users to enhance the system's capabilities by incorporating custom
 						applications that run seamlessly alongside native system applications.
