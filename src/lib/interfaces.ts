@@ -1,9 +1,4 @@
-export interface Interfaces {
-    [key: string]: Interface;
-}
-
-export interface Interface {
-    name: string;
+export interface Services {
     services: { [key: string]: Service };
 }
 

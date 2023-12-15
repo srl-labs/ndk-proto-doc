@@ -17,7 +17,7 @@ const config = {
 					'/css/*',
 					'/generate/*',
 					'/images/*',
-					'/interfaces/*'
+					'/ndk-services/*'
 				]
 			}
 		})

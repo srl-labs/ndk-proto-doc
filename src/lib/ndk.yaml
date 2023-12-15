@@ -1,0 +1,144 @@
+services:
+  sdk:
+    description: Main service for the NDK
+    name: SDK
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  telemetry:
+    description: A service to manage application's state
+    name: Telemetry
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  appid:
+    description:
+    name: App ID
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  bfd:
+    description:
+    name: BFD
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  config:
+    description:
+    name: Config
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  interface:
+    description:
+    name: Interface
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  lldp:
+    description:
+    name: LLDP
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  mpls:
+    description:
+    name: MPLS
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  networkinstance:
+    description:
+    name: Network Instance
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  nexthop_group:
+    description:
+    name: Next-hop Group
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:
+  route:
+    description:
+    name: Route
+    versions:
+      v0.2.0:
+        documentation:
+        source:
+      # v0.1.1:
+      #   documentation:
+      #   source:
+      # v0.1.0:
+      #   documentation:
+      #   source:

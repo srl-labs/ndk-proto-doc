@@ -5,24 +5,29 @@
 
 	import Footer from '$lib/components/Footer.svelte';
 
-	import type { Interfaces } from '$lib/interfaces';
-	import ifcLoad from '$lib/interfaces.yaml?raw';
+	import type { Services } from '$lib/interfaces';
+	import ifcLoad from '$lib/ndk.yaml?raw';
 
-	const interfaces = yaml.load(ifcLoad) as Interfaces;
-	const key = 'srlinux';
+	const services = yaml.load(ifcLoad) as Services;
+	// key is the top level element in the ndk.yaml that groups all the services
+	const key = 'services';
+
+	// pathKey is the key to append to the path to get to the doc
+	// page of a particular service
+	const pathKey = 'doc';
 
 	let panelList: any[] = [];
-	Object.keys(interfaces[key].services).forEach((el) => {
+	Object.keys(services[key]).forEach((el) => {
 		panelList.push({
-			name: interfaces[key].services[el].name,
-			desc: interfaces[key].services[el].description,
-			href: `${key}/${el}`
+			name: services[key][el].name,
+			desc: services[key][el].description,
+			href: `${pathKey}/${el}`
 		});
 	});
 </script>
 
 <svelte:head>
-	<title>SR Linux NDK Protobuf Documentation</title>
+	<title>SR Linux NDK Service Documentation</title>
 </svelte:head>
 
 <div class="flex flex-col items-center min-h-screen pt-5 has-header-img font-nunito">

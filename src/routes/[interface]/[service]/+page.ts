@@ -1,53 +1,50 @@
-import { error, json } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 
 import yaml from 'js-yaml';
 
-import type { Interfaces } from '$lib/interfaces';
-import ifcLoad from '$lib/interfaces.yaml?raw';
+import type { Services } from '$lib/interfaces';
+import ndkLoad from '$lib/ndk.yaml?raw';
 
-const interfaces = yaml.load(ifcLoad) as Interfaces;
+const services = yaml.load(ndkLoad) as Services;
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ url, fetch, params }) {
   const pathUrl = url.origin;
-  const p = params.interface;
+
+  // service name from the url?
   const s = params.service;
+
+  // check if the referenced service exists in the ndk.yaml
   let found;
-
-  found = Object.keys(interfaces).includes(p);
+  found = Object.keys(services['services']).includes(s);
   if (found) {
-    found = Object.keys(interfaces[p].services).includes(s);
-    if (found) {
-      let invalidKeys = [];
-      for (const [key, value] of url.searchParams.entries()) {
-        if (key != "version") invalidKeys.push(key);
-      }
-      if (invalidKeys.length > 0) throw error(404, "Invalid URL Parameters");
+    let invalidKeys = [];
+    for (const [key, value] of url.searchParams.entries()) {
+      if (key != "version") invalidKeys.push(key);
+    }
+    if (invalidKeys.length > 0) throw error(404, "Invalid URL Parameters");
 
-      let ov = Object.keys(interfaces[p].services[s].versions);
-      let v = ov[0];
-      if (url.searchParams.has("version")) {
-        v = url.searchParams.get("version").trim();
-        if (!ov.includes(v)) {
-          throw error(404, "Unsupported Version");
-        }
-      }
-
-      try {
-        const fetchUrl = `${pathUrl}/interfaces/${p}/${s}/${v}/proto-doc.json`;
-        const resp = await fetch(fetchUrl);
-        const protoDoc = await resp.json();
-      
-        return {
-          interface: p, service: s, version: v,
-          protoDoc: await protoDoc
-        }
-      } catch(e) {
-        throw error(404, "Error fetching proto definition");
+    let ov = Object.keys(services['services'][s].versions);
+    let v = ov[0];
+    if (url.searchParams.has("version")) {
+      v = url.searchParams.get("version").trim();
+      if (!ov.includes(v)) {
+        throw error(404, "Unsupported Version");
       }
     }
-    else throw error(404, "Unsupported Service");
-  } else {
-    throw error(404, "Unsupported Product");
+
+    try {
+      const fetchUrl = `${pathUrl}/ndk-services/${s}/${v}/proto-doc.json`;
+      const resp = await fetch(fetchUrl);
+      const protoDoc = await resp.json();
+
+      return {
+        service: s, version: v,
+        protoDoc: await protoDoc
+      }
+    } catch (e) {
+      throw error(404, "Error fetching proto definition");
+    }
   }
+  else throw error(404, "Unsupported Service");
 }

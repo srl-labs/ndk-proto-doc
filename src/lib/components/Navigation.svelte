@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 
-	export let interfaces: any,
+	export let services: any,
 		iKey: string,
 		sKey: string,
 		version: string,
@@ -120,7 +120,7 @@
 				<a class="w-6" href="../"><img src="/images/navbar-logo.png" alt="Logo" /></a>
 			</div>
 			<div class="flex px-2 text-sm dark:text-gray-200">
-				<span>{interfaces[iKey].services[sKey].name} {version}</span>
+				<span>{services[sKey].name} {version}</span>
 			</div>
 		</div>
 		<div class="hidden lg:flex items-center">
@@ -206,23 +206,23 @@
 			<h3
 				class="px-6 py-4 font-semibold leading-6 text-gray-900 dark:text-gray-200 bg-gray-100 dark:bg-gray-700"
 			>
-				{interfaces[iKey].name}
+				{services[iKey].name}
 			</h3>
 			<div
 				class="px-6 pt-2 pb-4 text-sm max-w-[400px] lg:min-w-[350px] max-h-[500px] overflow-y-auto scroll-light dark:scroll-dark"
 			>
 				<ul class="py-2 space-y-2">
-					{#each Object.keys(interfaces[iKey].services) as svc}
+					{#each Object.keys(services) as svc}
 						<li>
 							<p
 								class="p-2 dark:text-gray-200 {sKey === svc
 									? 'bg-gray-100 dark:bg-gray-900 rounded-lg'
 									: ''}"
 							>
-								{interfaces[iKey].services[svc].name} Service
+								{services[svc].name} Service
 							</p>
 							<ul class="py-2 space-y-2 border-l ml-3">
-								{#each Object.keys(interfaces[iKey].services[svc].versions) as vrn}
+								{#each Object.keys(services[svc].versions) as vrn}
 									<li class="ml-3">
 										<a
 											data-sveltekit-reload
