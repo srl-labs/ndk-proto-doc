@@ -36,7 +36,7 @@
 			<div>
 				<p class="mb-4"><img src="/images/nokia_w.svg" width="100" alt="Logo" /></p>
 				<h3 class="text-3xl text-yellow-200 font-light mt-6">SR Linux NDK Service Documentation</h3>
-				<div class="text-white mt-4 max-w-[450px] text-sm">
+				<div class="text-white mt-4 max-w-[450px] text-m">
 					<p>
 						SR Linux empowers users to enhance the system's capabilities by incorporating custom
 						applications that run seamlessly alongside native system applications.
@@ -44,7 +44,7 @@
 					<p class="mt-4">
 						<a
 							class="underline text-blue-500 hover:text-blue-400"
-							href="https://learn.srlinux.dev/ndk/">SR Linux NDK (Network Development Kit)</a
+							href="https://learn.srlinux.dev/ndk/">SR Linux NDK (NetOps Development Kit)</a
 						> underpins this extensibility by providing a set of APIs and tools for developers to customize
 						the Network OS to their unique needs and requirements.
 					</p>
