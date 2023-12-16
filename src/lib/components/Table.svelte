@@ -5,7 +5,7 @@
 	const custom = {
 		table: {
 			caption_cont: 'py-5 text-left font-nunito',
-			caption: 'text-blue-600 dark:text-blue-500 hover:underline font-mono text-sm',
+			caption: 'text-blue-600 dark:text-blue-500 hover:underline font-mono text-sm break-all',
 			desc: 'mt-1 font-normal text-gray-500 dark:text-gray-400 text-xs font-mono break-word',
 			container: 'overflow-x-auto max-w-full scroll-light dark:scroll-dark',
 			table: 'text-left text-gray-500 dark:text-gray-400 w-full font-nunito',
