@@ -50,8 +50,8 @@
 					</p>
 				</div>
 			</div>
-			<div class="mt-5 bg-white dark:bg-gray-800 rounded-lg shadow-xl">
-				<div class="my-1.5 h-[305px] overflow-y-auto scroll-light dark:scroll-dark">
+			<div class="mt-5 bg-white dark:bg-gray-800 rounded-lg shadow-xl py-0.5">
+				<div class="my-1 h-[305px] overflow-y-auto scroll-light dark:scroll-dark">
 					<ul>
 						{#each panelList as item, i}
 							<li
