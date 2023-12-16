@@ -4,9 +4,9 @@
 	// TAILWIND CLASS DEFINITION
 	const custom = {
 		table: {
-			caption_cont: 'py-5 text-left font-nunito  overflow-x-auto',
+			caption_cont: 'py-5 text-left font-nunito',
 			caption: 'text-blue-600 dark:text-blue-500 hover:underline font-mono text-sm',
-			desc: 'mt-1 font-normal text-gray-500 dark:text-gray-400 text-xs font-mono whitespace-pre',
+			desc: 'mt-1 font-normal text-gray-500 dark:text-gray-400 text-xs font-mono break-word',
 			container: 'overflow-x-auto max-w-full',
 			table: 'text-left text-gray-500 dark:text-gray-400 w-full font-nunito',
 			thead: 'text-xs uppercase text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-gray-700',

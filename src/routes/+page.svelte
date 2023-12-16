@@ -1,8 +1,5 @@
 <script lang="ts">
-	import '../app.css';
-
 	import yaml from 'js-yaml';
-
 	import Footer from '$lib/components/Footer.svelte';
 
 	import type { Services } from '$lib/interfaces';
