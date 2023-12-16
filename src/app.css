@@ -11,6 +11,7 @@
   /* Scroll Light */
   .scroll-light::-webkit-scrollbar {
     width: 2px;
+    height: 2px;
   }
 
   .scroll-light::-webkit-scrollbar-track {
@@ -28,6 +29,7 @@
   /* Scroll Dark */
   .scroll-dark::-webkit-scrollbar {
     width: 2px;
+    height: 2px;
   }
 
   .scroll-dark::-webkit-scrollbar-track {

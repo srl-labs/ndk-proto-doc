@@ -7,7 +7,7 @@
 			caption_cont: 'py-5 text-left font-nunito',
 			caption: 'text-blue-600 dark:text-blue-500 hover:underline font-mono text-sm',
 			desc: 'mt-1 font-normal text-gray-500 dark:text-gray-400 text-xs font-mono break-word',
-			container: 'overflow-x-auto max-w-full',
+			container: 'overflow-x-auto max-w-full scroll-light dark:scroll-dark',
 			table: 'text-left text-gray-500 dark:text-gray-400 w-full font-nunito',
 			thead: 'text-xs uppercase text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-gray-700',
 			link: 'text-blue-600 dark:text-blue-500 hover:underline font-mono text-xs',
@@ -20,8 +20,6 @@
 	};
 
 	// FORMAT DESCRIPTION
-	const fdesc = (d: string) => d.replaceAll('\n', '<br>');
-
 	const longOrFull = (longName: string, fullName: string) => {
 		if(imported) {
 			return fullName;
@@ -55,7 +53,7 @@
 			<a class={custom.table.caption} href="#{longOrFull(item.longName, item.fullName)}"
 				>{item.longName}</a>
 			{#if item.description}
-				<p class={custom.table.desc}>{@html fdesc(item.description)}</p>
+				<p class={custom.table.desc}>{item.description}</p>
 			{/if}
 		</div>
 		<div class={custom.table.container}>
@@ -86,7 +84,7 @@
 										{#if z.requestStreaming} stream {/if}
 									</td>
 									<td class={custom.table.td}>
-										<p class="whitespace-pre">{@html fdesc(z.description)}</p>
+										<p class="whitespace-pre">{z.description}</p>
 									</td>
 								</tr>
 							{/each}
@@ -135,7 +133,7 @@
 												{#if item.options && item.options == 'deprecated'}
 													<strong>Deprecated.</strong>
 												{/if}
-												<span class="whitespace-pre">{@html fdesc(z.description)}</span>
+												<span class="whitespace-pre">{z.description}</span>
 												{#if z.defaultValue} Default: {z.defaultValue} {/if}
 											</p>
 										</td>
@@ -159,7 +157,7 @@
 									<th scope="row" class={custom.table.th_row}>{z.name}</th>
 									<td class="{custom.table.td}">{z.number}</td>
 									<td class={custom.table.td}>
-										<p class="whitespace-pre">{@html fdesc(z.description)}</p>
+										<p class="whitespace-pre">{z.description}</p>
 									</td>
 								</tr>
 							{/each}
@@ -191,7 +189,7 @@
 							<td class="{custom.table.td}">{item.number}</td>
 							<td class={custom.table.td}>
 								<p>
-									<span class="whitespace-pre">{@html fdesc(item.description)}</span>
+									<span class="whitespace-pre">{item.description}</span>
 									{#if item.defaultValue} Default: {item.defaultValue} {/if}
 								</p>
 							</td>
