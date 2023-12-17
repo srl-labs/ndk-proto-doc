@@ -4,7 +4,6 @@
 	import { browser } from '$app/environment';
 
 	export let services: any,
-		iKey: string,
 		sKey: string,
 		version: string,
 		files: any,
@@ -83,7 +82,7 @@
 
 <!-- NAVBAR -->
 <nav
-	class="fixed top-0 z-30 px-3 py-4 w-screen select-none text-sm font-nunito bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700"
+	class="fixed top-0 z-30 px-6 py-4 w-screen select-none text-sm font-nunito bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700"
 >
 	<div class="flex justify-between">
 		<!-- navbar left item -->
@@ -112,7 +111,7 @@
 					<path d="M6 18L18 6M6 6l12 12"></path>
 				</svg>
 			</button>
-			<div class="flex px-2">
+			<div class="flex pr-2">
 				<a class="w-6" href="../"><img src="/images/navbar-logo.png" alt="Logo" /></a>
 			</div>
 			<div class="flex px-2 text-sm dark:text-gray-200">
@@ -244,7 +243,7 @@
 	class="text-sm font-nunito pt-[70px] fixed left-0 top-0 z-20 w-[300px] md:w-fit transition-transform -translate-x-full lg:-translate-x-0 lg:h-screen lg:sticky bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700"
 >
 	<div class="bg-white dark:bg-gray-800">
-		<div class="px-6 text-right">
+		<div class="px-4 text-right">
 			<a
 				href={srcDoc.source}
 				class="text-blue-600 dark:text-blue-500 hover:underline text-[10px] uppercase">Source</a
@@ -258,7 +257,7 @@
 				>
 			{/if}
 		</div>
-		<div class="ml-5 mr-6 mt-2 mb-4">
+		<div class="px-3 pb-4">
 			<input
 				type="text"
 				id="search"
