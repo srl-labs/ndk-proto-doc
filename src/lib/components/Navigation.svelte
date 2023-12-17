@@ -27,8 +27,8 @@
 		}
 	});
 
-	const toggleNavInterfaces = () => {
-		document.getElementById('navInterfaces')?.classList.toggle('hidden');
+	const toggleNavServices = () => {
+		document.getElementById('navServices')?.classList.toggle('hidden');
 	};
 
 	export const toggleSidebar = () => {
@@ -124,7 +124,7 @@
 		</div>
 		<!-- navbar right item -->
 		<div class="flex items-center mr-3">
-			<button class="inline-flex px-2" on:click={toggleNavInterfaces}>
+			<button class="inline-flex px-2" on:click={toggleNavServices}>
 				<svg
 					class="w-5 h-5 dark:text-gray-200"
 					fill="none"
@@ -188,24 +188,24 @@
 	</div>
 </nav>
 
-<!-- INTERFACES + VERSIONS POPUP -->
-<div id="navInterfaces" class="fixed inset-0 z-50 font-nunito hidden">
+<!-- NDK Services + VERSIONS POPUP -->
+<div id="navServices" class="fixed inset-0 z-50 font-nunito hidden">
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<div
 		role="button"
 		tabindex="0"
 		class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
-		on:click={toggleNavInterfaces}
+		on:click={toggleNavServices}
 	></div>
 	<div class="flex min-h-full items-center justify-center p-4">
 		<div class="relative overflow-hidden rounded-lg shadow-xl bg-white dark:bg-gray-800">
 			<h3
-				class="px-6 py-4 font-semibold leading-6 text-gray-900 dark:text-gray-200 bg-gray-100 dark:bg-gray-700"
+				class="px-6 py-4 font-semibold leading-6 underline text-blue-800 hover:text-blue-400 dark:text-gray-200 dark:hover:text-blue-400 bg-gray-100 dark:bg-gray-700"
 			>
-				{services[iKey].name}
+				<a href="https://learn.srlinux.dev/ndk/releases/">NDK Releases</a>
 			</h3>
 			<div
-				class="px-6 pt-2 pb-4 text-sm max-w-[400px] lg:min-w-[350px] max-h-[500px] overflow-y-auto scroll-light dark:scroll-dark"
+				class="px-6 pt-2 pb-4 text-sm max-w-[400px] lg:min-w-[450px] max-h-[500px] overflow-y-auto scroll-light dark:scroll-dark"
 			>
 				<ul class="py-2 space-y-2">
 					{#each Object.keys(services) as svc}
