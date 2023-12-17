@@ -33,7 +33,7 @@
 			<div>
 				<p class="mb-4"><img src="/images/nokia_w.svg" width="100" alt="Logo" /></p>
 				<h3 class="text-3xl text-yellow-200 font-light mt-6">SR Linux NDK Service Documentation</h3>
-				<div class="text-white mt-4 max-w-[450px] text-sm">
+				<div class="text-white mt-4 max-w-[450px] text-m">
 					<p>
 						SR Linux empowers users to enhance the system's capabilities by incorporating custom
 						applications that run seamlessly alongside native system applications.
@@ -52,7 +52,9 @@
 					<ul>
 						{#each panelList as item, i}
 							<li
-								class="items-center p-4 text-gray-900 hover:bg-gray-100 {i > 0 ? 'border-t dark:border-gray-700' : ''} dark:hover:bg-gray-700"
+								class="items-center p-4 text-gray-900 hover:bg-gray-100 {i > 0
+									? 'border-t dark:border-gray-700'
+									: ''} dark:hover:bg-gray-700"
 							>
 								<a data-sveltekit-reload href={item.href}>
 									<p class="dark:text-white">{item.name}</p>
