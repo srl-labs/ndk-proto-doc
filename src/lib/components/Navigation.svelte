@@ -82,7 +82,7 @@
 
 <!-- NAVBAR -->
 <nav
-	class="fixed top-0 z-30 px-6 py-4 w-screen select-none text-sm font-nunito bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700"
+	class="fixed top-0 z-30 px-3 py-4 w-screen select-none text-sm font-nunito bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700"
 >
 	<div class="flex justify-between">
 		<!-- navbar left item -->
@@ -111,13 +111,14 @@
 					<path d="M6 18L18 6M6 6l12 12"></path>
 				</svg>
 			</button>
-			<div class="flex pr-2">
+			<div class="flex px-2">
 				<a class="w-6" href="../"><img src="/images/navbar-logo.png" alt="Logo" /></a>
 			</div>
 			<div class="flex px-2 text-sm dark:text-gray-200">
 				<span>{services[sKey].name} {version}</span>
 			</div>
 		</div>
+		<!-- navbar centre item -->
 		<div class="hidden lg:flex items-center">
 			<p class="dark:text-gray-200">SR Linux NDK Service Documentation</p>
 		</div>
