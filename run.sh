@@ -26,7 +26,6 @@ SERVICE_FILES=(
 	"config_service.proto"
 	"interface_service.proto"
 	"lldp_service.proto"
-	"mpls_service.proto"
 	"networkinstance_service.proto"
 	"nexthop_group_service.proto"
 	"route_service.proto"
