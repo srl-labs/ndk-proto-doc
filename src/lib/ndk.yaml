@@ -3,6 +3,9 @@ services:
     description: Main interface between custom apps and NDK
     name: SDK
     versions:
+      v0.5.0:
+        documentation: null
+        source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.5.0/ndk/sdk_service.proto
       v0.4.0:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.4.0/ndk/sdk_service.proto
@@ -15,11 +18,13 @@ services:
       v0.1.1:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.1.1/ndk/sdk_service.proto
-
   telemetry:
     description: A service to manage application's state
     name: Telemetry
     versions:
+      v0.5.0:
+        documentation: null
+        source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.5.0/ndk/telemetry_service.proto
       v0.4.0:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.4.0/ndk/telemetry_service.proto
@@ -32,11 +37,13 @@ services:
       v0.1.1:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.1.1/ndk/telemetry_service.proto
-
   appid:
     description: Application identification between router agents and SDK service manager
     name: App ID
     versions:
+      v0.5.0:
+        documentation: null
+        source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.5.0/ndk/appid_service.proto
       v0.4.0:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.4.0/ndk/appid_service.proto
@@ -49,11 +56,13 @@ services:
       v0.1.1:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.1.1/ndk/appid_service.proto
-
   bfd:
     description: API with BFD Manager
     name: BFD
     versions:
+      v0.5.0:
+        documentation: null
+        source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.5.0/ndk/bfd_service.proto
       v0.4.0:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.4.0/ndk/bfd_service.proto
@@ -66,11 +75,13 @@ services:
       v0.1.1:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.1.1/ndk/bfd_service.proto
-
   config:
     description: Receiving configuration from the SR Linux Management Server
     name: Config
     versions:
+      v0.5.0:
+        documentation: null
+        source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.5.0/ndk/config_service.proto
       v0.4.0:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.4.0/ndk/config_service.proto
@@ -83,11 +94,13 @@ services:
       v0.1.1:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.1.1/ndk/config_service.proto
-
   interface:
     description: Receiving interface events
     name: Interface
     versions:
+      v0.5.0:
+        documentation: null
+        source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.5.0/ndk/interface_service.proto
       v0.4.0:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.4.0/ndk/interface_service.proto
@@ -100,11 +113,13 @@ services:
       v0.1.1:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.1.1/ndk/interface_service.proto
-
   lldp:
     description: Receiving LLDP events
     name: LLDP
     versions:
+      v0.5.0:
+        documentation: null
+        source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.5.0/ndk/lldp_service.proto
       v0.4.0:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.4.0/ndk/lldp_service.proto
@@ -117,11 +132,13 @@ services:
       v0.1.1:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.1.1/ndk/lldp_service.proto
-
   networkinstance:
     description: Receiving network instance events
     name: Network Instance
     versions:
+      v0.5.0:
+        documentation: null
+        source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.5.0/ndk/networkinstance_service.proto
       v0.4.0:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.4.0/ndk/networkinstance_service.proto
@@ -134,11 +151,13 @@ services:
       v0.1.1:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.1.1/ndk/networkinstance_service.proto
-
   nexthop_group:
     description: Receiving next-hop group events
     name: Next-hop Group
     versions:
+      v0.5.0:
+        documentation: null
+        source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.5.0/ndk/nexthop_group_service.proto
       v0.4.0:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.4.0/ndk/nexthop_group_service.proto
@@ -151,11 +170,13 @@ services:
       v0.1.1:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.1.1/ndk/nexthop_group_service.proto
-
   route:
     description: Receiving and setting routes
     name: Route
     versions:
+      v0.5.0:
+        documentation: null
+        source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.5.0/ndk/route_service.proto
       v0.4.0:
         documentation:
         source: https://github.com/nokia/srlinux-ndk-protobufs/blob/v0.4.0/ndk/route_service.proto

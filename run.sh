@@ -88,6 +88,14 @@ function generate_doc {
 	echo "finished Doc compilation for ${SERVICE_FILE}"
 }
 
+function add-to-services() {
+	yq -i '
+    .services |= with_entries(
+      .value.versions = {"'"$1"'": {"documentation": null, "source": "https://github.com/nokia/srlinux-ndk-protobufs/blob/'"$1"'/ndk/" + .key + "_service.proto"}} + .value.versions
+    )
+  ' src/lib/ndk.yaml
+}
+
 function help {
 	printf "%s <task> [args]\n\nTasks:\n" "${0}"
 
