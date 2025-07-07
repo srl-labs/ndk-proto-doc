@@ -1,0 +1,1391 @@
+{
+  "files": [
+    {
+      "name": "ndk/telemetry_service.proto",
+      "description": "",
+      "package": "srlinux.sdk",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": true,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "TelemetryData",
+          "longName": "TelemetryData",
+          "fullName": "srlinux.sdk.TelemetryData",
+          "description": "Represents telemetry data.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "json_content",
+              "description": "Structured JSON telemetry data",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "TelemetryDeleteRequest",
+          "longName": "TelemetryDeleteRequest",
+          "fullName": "srlinux.sdk.TelemetryDeleteRequest",
+          "description": "Represents telemetry delete request.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "keys",
+              "description": "Telemetry key",
+              "label": "repeated",
+              "type": "TelemetryKey",
+              "longType": "TelemetryKey",
+              "fullType": "srlinux.sdk.TelemetryKey",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "TelemetryDeleteResponse",
+          "longName": "TelemetryDeleteResponse",
+          "fullName": "srlinux.sdk.TelemetryDeleteResponse",
+          "description": "Represents telemetry delete response.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "status",
+              "description": "Status of delete request",
+              "label": "",
+              "type": "SdkMgrStatus",
+              "longType": "SdkMgrStatus",
+              "fullType": "srlinux.sdk.SdkMgrStatus",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "error_str",
+              "description": "Detailed error message",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "TelemetryInfo",
+          "longName": "TelemetryInfo",
+          "fullName": "srlinux.sdk.TelemetryInfo",
+          "description": "Represents telemetry information.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "Telemetry key",
+              "label": "",
+              "type": "TelemetryKey",
+              "longType": "TelemetryKey",
+              "fullType": "srlinux.sdk.TelemetryKey",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "data",
+              "description": "Telemetry data",
+              "label": "",
+              "type": "TelemetryData",
+              "longType": "TelemetryData",
+              "fullType": "srlinux.sdk.TelemetryData",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "TelemetryKey",
+          "longName": "TelemetryKey",
+          "fullName": "srlinux.sdk.TelemetryKey",
+          "description": "Represents telemetry key.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "js_path",
+              "description": "JSON path referencing the key for telemetry data",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "TelemetryUpdateRequest",
+          "longName": "TelemetryUpdateRequest",
+          "fullName": "srlinux.sdk.TelemetryUpdateRequest",
+          "description": "Represents telemetry update request.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "states",
+              "description": "State of application",
+              "label": "repeated",
+              "type": "TelemetryInfo",
+              "longType": "TelemetryInfo",
+              "fullType": "srlinux.sdk.TelemetryInfo",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "TelemetryUpdateResponse",
+          "longName": "TelemetryUpdateResponse",
+          "fullName": "srlinux.sdk.TelemetryUpdateResponse",
+          "description": "Represents telemetry update response.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "status",
+              "description": "Status of telemetry update request",
+              "label": "",
+              "type": "SdkMgrStatus",
+              "longType": "SdkMgrStatus",
+              "fullType": "srlinux.sdk.SdkMgrStatus",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "error_str",
+              "description": "Detailed error message",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "name": "SdkMgrTelemetryService",
+          "longName": "SdkMgrTelemetryService",
+          "fullName": "srlinux.sdk.SdkMgrTelemetryService",
+          "description": "Represents service for telemetry service to store state data.",
+          "methods": [
+            {
+              "name": "TelemetryAddOrUpdate",
+              "description": "Add or update telemetry data",
+              "requestType": "TelemetryUpdateRequest",
+              "requestLongType": "TelemetryUpdateRequest",
+              "requestFullType": "srlinux.sdk.TelemetryUpdateRequest",
+              "requestStreaming": false,
+              "responseType": "TelemetryUpdateResponse",
+              "responseLongType": "TelemetryUpdateResponse",
+              "responseFullType": "srlinux.sdk.TelemetryUpdateResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "TelemetryDelete",
+              "description": "Delete telemetry data",
+              "requestType": "TelemetryDeleteRequest",
+              "requestLongType": "TelemetryDeleteRequest",
+              "requestFullType": "srlinux.sdk.TelemetryDeleteRequest",
+              "requestStreaming": false,
+              "responseType": "TelemetryDeleteResponse",
+              "responseLongType": "TelemetryDeleteResponse",
+              "responseFullType": "srlinux.sdk.TelemetryDeleteResponse",
+              "responseStreaming": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ndk/sdk_common.proto",
+      "description": "",
+      "package": "srlinux.sdk",
+      "hasEnums": true,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [
+        {
+          "name": "IfEthernetDuplexModeType",
+          "longName": "IfEthernetDuplexModeType",
+          "fullName": "srlinux.sdk.IfEthernetDuplexModeType",
+          "description": "Represents interface ethernet duplex mode. Corresponds to yang values",
+          "values": [
+            {
+              "name": "IF_ETH_DUPLEX_MODE_UNSET",
+              "number": "0",
+              "description": "duplex mode not supported"
+            },
+            {
+              "name": "IF_ETH_DUPLEX_MODE_FULL",
+              "number": "1",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_DUPLEX_MODE_HALF",
+              "number": "2",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "name": "IfEthernetPortSpeedType",
+          "longName": "IfEthernetPortSpeedType",
+          "fullName": "srlinux.sdk.IfEthernetPortSpeedType",
+          "description": "Represents interface ethernet port speed. Corresponds to yang values",
+          "values": [
+            {
+              "name": "IF_ETH_PORT_SPEED_UNSET",
+              "number": "0",
+              "description": "Speed unknown"
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_10M",
+              "number": "1",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_100M",
+              "number": "2",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_1G",
+              "number": "3",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_10G",
+              "number": "4",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_25G",
+              "number": "5",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_40G",
+              "number": "6",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_50G",
+              "number": "7",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_100G",
+              "number": "8",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_200G",
+              "number": "9",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_400G",
+              "number": "10",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_1T",
+              "number": "11",
+              "description": ""
+            },
+            {
+              "name": "IF_ETH_PORT_SPEED_800G",
+              "number": "12",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "name": "IfLoopbackModeType",
+          "longName": "IfLoopbackModeType",
+          "fullName": "srlinux.sdk.IfLoopbackModeType",
+          "description": "Represents interface loopback mode. Corresponds to yang values",
+          "values": [
+            {
+              "name": "IF_LOOPBACK_MODE_UNSET",
+              "number": "0",
+              "description": "loopback mode not supported"
+            },
+            {
+              "name": "IF_LOOPBACK_MODE_NONE",
+              "number": "1",
+              "description": ""
+            },
+            {
+              "name": "IF_LOOPBACK_MODE_FACILITY",
+              "number": "2",
+              "description": ""
+            },
+            {
+              "name": "IF_LOOPBACK_MODE_TERMINAL",
+              "number": "3",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "name": "IfMgrIfType",
+          "longName": "IfMgrIfType",
+          "fullName": "srlinux.sdk.IfMgrIfType",
+          "description": "Represents interface type.",
+          "values": [
+            {
+              "name": "ETHERNET",
+              "number": "0",
+              "description": "Ethernet interface"
+            },
+            {
+              "name": "LOOPBACK",
+              "number": "1",
+              "description": "Loopback interface"
+            },
+            {
+              "name": "MANAGEMENT",
+              "number": "2",
+              "description": "Management interface"
+            },
+            {
+              "name": "AGGREGATE",
+              "number": "3",
+              "description": "Aggregate(LAG) interface"
+            },
+            {
+              "name": "IRB",
+              "number": "4",
+              "description": "Integrated Routing and Bridging (IRB) interface"
+            },
+            {
+              "name": "SYSTEM",
+              "number": "5",
+              "description": "System interface"
+            },
+            {
+              "name": "LIF",
+              "number": "6",
+              "description": "linux interface"
+            },
+            {
+              "name": "NIC",
+              "number": "7",
+              "description": "linux nic interface (bus/dev/fn)"
+            },
+            {
+              "name": "VHOST",
+              "number": "8",
+              "description": "vhost-net interface, vhn-\u003cname\u003e name for sock-path"
+            },
+            {
+              "name": "KKLIF",
+              "number": "9",
+              "description": "temp name for new style of lif interface"
+            },
+            {
+              "name": "KKVHOST",
+              "number": "10",
+              "description": "temp name for new style of vhost interface"
+            },
+            {
+              "name": "SYNC",
+              "number": "11",
+              "description": "1588 sync interface"
+            },
+            {
+              "name": "IF_TYPE_MAX",
+              "number": "12",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "name": "IfOperDownReason",
+          "longName": "IfOperDownReason",
+          "fullName": "srlinux.sdk.IfOperDownReason",
+          "description": "",
+          "values": [
+            {
+              "name": "IF_OPER_DOWN_NONE",
+              "number": "0",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_PORT_ADMIN_DISABLED",
+              "number": "1",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_MDA_ADMIN_DISABLED",
+              "number": "2",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_TRANS_LASER_DISABLED",
+              "number": "3",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_MDA_NOT_PRESENT",
+              "number": "4",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_TRANS_NOT_PRESENT",
+              "number": "5",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_PHY_INIT",
+              "number": "6",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_LOWER_LAYER_DOWN",
+              "number": "7",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_MTU_RESOURCES",
+              "number": "8",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_UNSUPPORTED_SPEED",
+              "number": "9",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_UNSUPPORTED_TRANS_FEC",
+              "number": "10",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_OTHER",
+              "number": "11",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_PORT_NOT_PRESENT",
+              "number": "12",
+              "description": "used internally by chassis mgr only - xdp never publish to IDB!"
+            },
+            {
+              "name": "IF_OPER_DOWN_FABRIC_AVAILABILITY",
+              "number": "13",
+              "description": "used internally by chassis mgr only - xdp never publish to IDB!"
+            },
+            {
+              "name": "IF_OPER_DOWN_NO_ACTIVE_LINKS",
+              "number": "14",
+              "description": "lag interface only"
+            },
+            {
+              "name": "IF_OPER_DOWN_MIN_LINK_THRESHOLD",
+              "number": "15",
+              "description": "lag interface only"
+            },
+            {
+              "name": "IF_OPER_DOWN_9_12_SPEED_MISMATCH",
+              "number": "16",
+              "description": "Vodka port 9-12 must all be same speed as port 9"
+            },
+            {
+              "name": "IF_OPER_DOWN_LAG_RESOURCES",
+              "number": "17",
+              "description": "lag interface only"
+            },
+            {
+              "name": "IF_OPER_DOWN_LAG_MEMBER_RESOURCES",
+              "number": "18",
+              "description": "lag member interface only"
+            },
+            {
+              "name": "IF_OPER_DOWN_STANDBY_SIGNALING",
+              "number": "19",
+              "description": "ESM multihoming"
+            },
+            {
+              "name": "IF_OPER_DOWN_HOLD_TIME_UP_ACTIVE",
+              "number": "20",
+              "description": "interface hold-time up is actively holding the interface down"
+            },
+            {
+              "name": "IF_OPER_DOWN_RELOAD_TIME_ACTIVE",
+              "number": "21",
+              "description": "interface reload time is actively holding the interface down"
+            },
+            {
+              "name": "IF_OPER_DOWN_CONNECTOR_DOWN",
+              "number": "22",
+              "description": "parent connector oper down forces breakout port oper down"
+            },
+            {
+              "name": "IF_OPER_DOWN_AUTO_NEG_MISMATCH",
+              "number": "23",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_EVENT_HANDLER",
+              "number": "24",
+              "description": "used internally by chassis mgr only - xdp never publish to IDB!"
+            },
+            {
+              "name": "IF_OPER_DOWN_UNSUPPORTED_BREAKOUT",
+              "number": "25",
+              "description": "interface doesn't support breakout config"
+            },
+            {
+              "name": "IF_OPER_DOWN_CFM_CCM_DEFECT",
+              "number": "26",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_CRC_MON_FAIL_THRESH",
+              "number": "27",
+              "description": "crc-monitor signal failure threshold exceeded"
+            },
+            {
+              "name": "IF_OPER_DOWN_SYMBOL_MON_FAIL_THRESH",
+              "number": "28",
+              "description": "symbol-monitor signal failure threshold exceeded"
+            },
+            {
+              "name": "IF_OPER_DOWN_LINK_LOSS_FORWARDING",
+              "number": "29",
+              "description": "related to evpn-vpws mpls"
+            },
+            {
+              "name": "IF_OPER_DOWN_TRANS_DOWN",
+              "number": "30",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_STORM_CONTROL_ACTION",
+              "number": "31",
+              "description": ""
+            },
+            {
+              "name": "IF_OPER_DOWN_UNSUPPORTED_NUM_CHANNELS_FOR_SPEED",
+              "number": "32",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "name": "IfOperStateType",
+          "longName": "IfOperStateType",
+          "fullName": "srlinux.sdk.IfOperStateType",
+          "description": "Represents interface operational state.",
+          "values": [
+            {
+              "name": "IF_OPER_STATE_UP",
+              "number": "0",
+              "description": "Interface operational state up"
+            },
+            {
+              "name": "IF_OPER_STATE_DOWN",
+              "number": "1",
+              "description": "Interface operational state down"
+            },
+            {
+              "name": "IF_OPER_STATE_TESTING",
+              "number": "2",
+              "description": "Interface operational state testing"
+            },
+            {
+              "name": "IF_OPER_STATE_UNKNOWN",
+              "number": "3",
+              "description": "Interface operational state unknown"
+            },
+            {
+              "name": "IF_OPER_STATE_DORMANT",
+              "number": "4",
+              "description": "Interface operational state dormant"
+            },
+            {
+              "name": "IF_OPER_STATE_NOT_PRESENT",
+              "number": "5",
+              "description": "Interface operational state not present"
+            },
+            {
+              "name": "IF_OPER_STATE_LOWER_LAYER_DOWN",
+              "number": "6",
+              "description": "Interface operational state lower layer down"
+            }
+          ]
+        },
+        {
+          "name": "IfTransceiverFecType",
+          "longName": "IfTransceiverFecType",
+          "fullName": "srlinux.sdk.IfTransceiverFecType",
+          "description": "Represents interface transceiver fec. Corresponds to yang values",
+          "values": [
+            {
+              "name": "IF_TRANS_FEC_UNSET",
+              "number": "0",
+              "description": "Fec unknown"
+            },
+            {
+              "name": "IF_TRANS_FEC_DISABLED",
+              "number": "1",
+              "description": ""
+            },
+            {
+              "name": "IF_TRANS_FEC_CL91_RS528",
+              "number": "2",
+              "description": ""
+            },
+            {
+              "name": "IF_TRANS_FEC_RS544",
+              "number": "3",
+              "description": "Deprecated as a state value, but still used by devmgr/txr code to represent any rs544 flavor"
+            },
+            {
+              "name": "IF_TRANS_FEC_BASER",
+              "number": "4",
+              "description": ""
+            },
+            {
+              "name": "IF_TRANS_FEC_CL108_RS528",
+              "number": "5",
+              "description": ""
+            },
+            {
+              "name": "IF_TRANS_FEC_CL91_RS544",
+              "number": "6",
+              "description": ""
+            },
+            {
+              "name": "IF_TRANS_FEC_CL119_RS544",
+              "number": "7",
+              "description": ""
+            },
+            {
+              "name": "IF_TRANS_FEC_CL134_RS544",
+              "number": "8",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "name": "IpAddressState",
+          "longName": "IpAddressState",
+          "fullName": "srlinux.sdk.IpAddressState",
+          "description": "Represents IP address state.",
+          "values": [
+            {
+              "name": "IPADDR_STATE_UNKNOWN",
+              "number": "0",
+              "description": "IP address state unknown"
+            },
+            {
+              "name": "IPADDR_STATE_TENTATIVE",
+              "number": "1",
+              "description": "IP address state tentative"
+            },
+            {
+              "name": "IPADDR_STATE_DUPLICATED",
+              "number": "2",
+              "description": "IP address state duplicated"
+            },
+            {
+              "name": "IPADDR_STATE_INACCESSIBLE",
+              "number": "3",
+              "description": "IP address state inaccessible"
+            },
+            {
+              "name": "IPADDR_STATE_DEPRECATED",
+              "number": "4",
+              "description": "IP address state deprecated"
+            },
+            {
+              "name": "IPADDR_STATE_PREFERRED",
+              "number": "5",
+              "description": "IP address state preferred"
+            }
+          ]
+        },
+        {
+          "name": "PortOperDownReason",
+          "longName": "PortOperDownReason",
+          "fullName": "srlinux.sdk.PortOperDownReason",
+          "description": "Various reasons for port being operationally down.",
+          "values": [
+            {
+              "name": "PORT_OPER_DOWN_NONE",
+              "number": "0",
+              "description": ""
+            },
+            {
+              "name": "PORT_OPER_DOWN_PORT_ADMIN_DISABLED",
+              "number": "1",
+              "description": "Admin disabled (out of service). E.g lanes not created in physical layer devices"
+            },
+            {
+              "name": "PORT_OPER_DOWN_PORT_OPER_DISABLED",
+              "number": "2",
+              "description": "Admin enabled but operationally disabled. E.g lanes created but serdes are off"
+            },
+            {
+              "name": "PORT_OPER_DOWN_MDA_DISABLED",
+              "number": "3",
+              "description": "Parent MDA is disabled"
+            },
+            {
+              "name": "PORT_OPER_DOWN_MDA_FAILED",
+              "number": "4",
+              "description": "Parent MDA failed"
+            },
+            {
+              "name": "PORT_OPER_DOWN_LINK_DOWN",
+              "number": "5",
+              "description": "Operationally enabled but link/carrier down"
+            },
+            {
+              "name": "PORT_OPER_DOWN_TRANS_NOT_PRESENT",
+              "number": "6",
+              "description": "Transceiver is not plugged in or is dead (undetected)"
+            },
+            {
+              "name": "PORT_OPER_DOWN_TRANS_LASER_DISABLED",
+              "number": "7",
+              "description": "Transceiver laser is disabled"
+            },
+            {
+              "name": "PORT_OPER_DOWN_INCOMPATIBLE_CONNECTOR",
+              "number": "8",
+              "description": "Parent connector configuration does not match with this breakout port"
+            },
+            {
+              "name": "PORT_OPER_DOWN_PHY_UNSUPPORTED_FEC_CFG",
+              "number": "9",
+              "description": "A physical layer device on the port does not support configured FEC"
+            },
+            {
+              "name": "PORT_OPER_DOWN_PHY_UNSUPPORTED_TRANS_FEC",
+              "number": "10",
+              "description": "A physical layer device on the port does not support FEC configured on the transceiver"
+            },
+            {
+              "name": "PORT_OPER_DOWN_PHY_INTERNAL_FEC_ISSUE",
+              "number": "11",
+              "description": "A physical layer device has internal/hardware problem on employing FEC"
+            },
+            {
+              "name": "PORT_OPER_DOWN_UNSUPPORTED_BREAKOUT",
+              "number": "12",
+              "description": "Connector does not support the configured breakout mode."
+            }
+          ]
+        },
+        {
+          "name": "PortWarningReason",
+          "longName": "PortWarningReason",
+          "fullName": "srlinux.sdk.PortWarningReason",
+          "description": "Various warnings on port while it stays operational.",
+          "values": [
+            {
+              "name": "PORT_WARNING_NONE",
+              "number": "0",
+              "description": ""
+            },
+            {
+              "name": "PORT_WARNING_TRANS_RX_LOS",
+              "number": "1",
+              "description": "Transceiver reported RxLos"
+            },
+            {
+              "name": "PORT_WARNING_TRANS_UNSUPPORTED_SYNCE_CFG",
+              "number": "2",
+              "description": "Transceiver does not support synce configuration (e.g cannot do clock squelching on RxLos)"
+            },
+            {
+              "name": "PORT_WARNING_PHY_UNSUPPORTED_SYNCE_CFG",
+              "number": "3",
+              "description": "A physical layer device does not support synce configuration"
+            },
+            {
+              "name": "PORT_WARNING_PHY_UNSUPPORTED_PTP_CFG",
+              "number": "4",
+              "description": "A physical layer device does not support PTP configuration"
+            }
+          ]
+        },
+        {
+          "name": "SdkMgrOperation",
+          "longName": "SdkMgrOperation",
+          "fullName": "srlinux.sdk.SdkMgrOperation",
+          "description": "Represents enumeration value for operation in subscription.",
+          "values": [
+            {
+              "name": "SDK_MGR_OPERATION_CREATE",
+              "number": "0",
+              "description": "Create operation; returned if caching is enabled"
+            },
+            {
+              "name": "SDK_MGR_OPERATION_UPDATE",
+              "number": "1",
+              "description": "Update operation; returned if caching is enabled"
+            },
+            {
+              "name": "SDK_MGR_OPERATION_DELETE",
+              "number": "2",
+              "description": "Delete operation"
+            },
+            {
+              "name": "SDK_MGR_OPERATION_CREATE_OR_UPDATE",
+              "number": "3",
+              "description": "returned if caching is disabled; App can cache streaming data, if needed."
+            }
+          ]
+        },
+        {
+          "name": "SdkMgrStatus",
+          "longName": "SdkMgrStatus",
+          "fullName": "srlinux.sdk.SdkMgrStatus",
+          "description": "Represents status of network programming service calls.",
+          "values": [
+            {
+              "name": "SDK_MGR_STATUS_SUCCESS",
+              "number": "0",
+              "description": "Successful service call"
+            },
+            {
+              "name": "SDK_MGR_STATUS_FAILED",
+              "number": "1",
+              "description": "Failed service call"
+            }
+          ]
+        }
+      ],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "AgentReply",
+          "longName": "AgentReply",
+          "fullName": "srlinux.sdk.AgentReply",
+          "description": "Empty message from agent.",
+          "hasExtensions": false,
+          "hasFields": false,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "EvpnEthSegIdPb",
+          "longName": "EvpnEthSegIdPb",
+          "fullName": "srlinux.sdk.EvpnEthSegIdPb",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "es_id",
+              "description": "Type 0 for now. hard-coded id",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "GlobalIfId",
+          "longName": "GlobalIfId",
+          "fullName": "srlinux.sdk.GlobalIfId",
+          "description": "Represents global interface identifier.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "global_if_id",
+              "description": "Global interface identifier",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "IpAddrPrefLenPb",
+          "longName": "IpAddrPrefLenPb",
+          "fullName": "srlinux.sdk.IpAddrPrefLenPb",
+          "description": "Represents IP prefix.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "ip_addr",
+              "description": "IP address",
+              "label": "",
+              "type": "IpAddressPb",
+              "longType": "IpAddressPb",
+              "fullType": "srlinux.sdk.IpAddressPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "prefix_length",
+              "description": "IP address prefix length",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "IpAddressPb",
+          "longName": "IpAddressPb",
+          "fullName": "srlinux.sdk.IpAddressPb",
+          "description": "Represents IP address.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "ip_address",
+              "description": "IP address",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "IpInterfaceAddrPrefixPb",
+          "longName": "IpInterfaceAddrPrefixPb",
+          "fullName": "srlinux.sdk.IpInterfaceAddrPrefixPb",
+          "description": "Represents IP prefix state.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "prefix",
+              "description": "IP prefix",
+              "label": "",
+              "type": "IpAddrPrefLenPb",
+              "longType": "IpAddrPrefLenPb",
+              "fullType": "srlinux.sdk.IpAddrPrefLenPb",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "state",
+              "description": "IP prefix state",
+              "label": "",
+              "type": "IpAddressState",
+              "longType": "IpAddressState",
+              "fullType": "srlinux.sdk.IpAddressState",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "MacAddressPb",
+          "longName": "MacAddressPb",
+          "fullName": "srlinux.sdk.MacAddressPb",
+          "description": "Represents MAC address.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "mac_address",
+              "description": "MAC address",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "MplsLabel",
+          "longName": "MplsLabel",
+          "fullName": "srlinux.sdk.MplsLabel",
+          "description": "Represents MPLS label.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "mpls_label",
+              "description": "MPLS label",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NetInstanceId",
+          "longName": "NetInstanceId",
+          "fullName": "srlinux.sdk.NetInstanceId",
+          "description": "Represents network instance identifier.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "instance_id",
+              "description": "Network instance identifier",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "PortIdPb",
+          "longName": "PortIdPb",
+          "fullName": "srlinux.sdk.PortIdPb",
+          "description": "Represents port identifier.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "port_id",
+              "description": "Port identifier",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "SyncRequest",
+          "longName": "SyncRequest",
+          "fullName": "srlinux.sdk.SyncRequest",
+          "description": "Empty message for synchronization request.",
+          "hasExtensions": false,
+          "hasFields": false,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "SyncResponse",
+          "longName": "SyncResponse",
+          "fullName": "srlinux.sdk.SyncResponse",
+          "description": "Empty message for synchronization end.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "status",
+              "description": "Error code",
+              "label": "",
+              "type": "SdkMgrStatus",
+              "longType": "SdkMgrStatus",
+              "fullType": "srlinux.sdk.SdkMgrStatus",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "error_str",
+              "description": "Detailed error string",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    }
+  ],
+  "scalarValueTypes": [
+    {
+      "protoType": "double",
+      "notes": "",
+      "cppType": "double",
+      "csType": "double",
+      "goType": "float64",
+      "javaType": "double",
+      "phpType": "float",
+      "pythonType": "float",
+      "rubyType": "Float"
+    },
+    {
+      "protoType": "float",
+      "notes": "",
+      "cppType": "float",
+      "csType": "float",
+      "goType": "float32",
+      "javaType": "float",
+      "phpType": "float",
+      "pythonType": "float",
+      "rubyType": "Float"
+    },
+    {
+      "protoType": "int32",
+      "notes": "Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "int64",
+      "notes": "Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "uint32",
+      "notes": "Uses variable-length encoding.",
+      "cppType": "uint32",
+      "csType": "uint",
+      "goType": "uint32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int/long",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "uint64",
+      "notes": "Uses variable-length encoding.",
+      "cppType": "uint64",
+      "csType": "ulong",
+      "goType": "uint64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sint32",
+      "notes": "Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sint64",
+      "notes": "Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "fixed32",
+      "notes": "Always four bytes. More efficient than uint32 if values are often greater than 2^28.",
+      "cppType": "uint32",
+      "csType": "uint",
+      "goType": "uint32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "fixed64",
+      "notes": "Always eight bytes. More efficient than uint64 if values are often greater than 2^56.",
+      "cppType": "uint64",
+      "csType": "ulong",
+      "goType": "uint64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "sfixed32",
+      "notes": "Always four bytes.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sfixed64",
+      "notes": "Always eight bytes.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "bool",
+      "notes": "",
+      "cppType": "bool",
+      "csType": "bool",
+      "goType": "bool",
+      "javaType": "boolean",
+      "phpType": "boolean",
+      "pythonType": "boolean",
+      "rubyType": "TrueClass/FalseClass"
+    },
+    {
+      "protoType": "string",
+      "notes": "A string must always contain UTF-8 encoded or 7-bit ASCII text.",
+      "cppType": "string",
+      "csType": "string",
+      "goType": "string",
+      "javaType": "String",
+      "phpType": "string",
+      "pythonType": "str/unicode",
+      "rubyType": "String (UTF-8)"
+    },
+    {
+      "protoType": "bytes",
+      "notes": "May contain any arbitrary sequence of bytes.",
+      "cppType": "string",
+      "csType": "ByteString",
+      "goType": "[]byte",
+      "javaType": "ByteString",
+      "phpType": "string",
+      "pythonType": "str",
+      "rubyType": "String (ASCII-8BIT)"
+    }
+  ]
+}
